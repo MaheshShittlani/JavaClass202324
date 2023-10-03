@@ -1,0 +1,194 @@
+1. Java is a programming language which is developed by `James Gosling` and Team in `Sun Microsystems`.
+2. Java Team
+    - James Gosling
+    - Ed Frank
+    - Mike Sheriden
+    - Chris Worth
+    - Patrick Naughton
+3. Java is used to develop a rich set of application including desktop application, web application, mobile application and Network based application.
+
+4. Desktop Application - are those which can be run on a single pc or standalone pc.
+    - Microsoft word
+    - Paint Brush
+    - Google Chrome
+    - Photoshop
+
+5. Web Application - are those which are running over the server and can be accessed  by anyone through the internet.
+    - Google Docs
+    - Photopea
+6. Mobile Application - are those application which is specially created for the mobiles.
+    - Facebook app
+    - Youtube app
+7. Java is created under a green project for consumer related goods software in mind.
+8. Intially java was named as `OAK` and later renamed with `JAVA`.
+9. Before 1990's the applications are developed in C/ C++. and these applications are platform dependent.
+
+10. How C / C++ application works?
+
+    Hello.c             ---->   Compiler     ---> Hello.obj / Hello.o  ---> Linker -> Hello.exe
+    (Source Code)                                   (Object Code)
+
+Windows
+-----------------
+    printf("Hello World");  
+
+        |
+
+    show("Hello World");
+
+
+Linux
+---------------
+    printf("Hello World");
+            |
+    display("Hello World");
+
+11. C / C++ -> `Write Once & Compile Anywhere` (But Generally it is not happening as we have to write it again as per the linux or other os library availability)
+
+12. How Java program works?
+
+Hello.java (Windows)
+------------------
+System.out.println("Hello World"); (Source Code)    
+    -> Compile (javac Hello.java) 
+    -> Hello.class (Bytecode) 
+    -> JVM (Java virtual Machine - Windows) 
+    -> show("Hello World") -> Windows Instruction set to print something 
+    -> Hello World (output)
+
+Hello.java (Linux)
+----------------------
+System.out.println("Hello World"); (Source Code)    
+    -> Compile (javac Hello.java) 
+    -> Hello.class (Bytecode) 
+    -> JVM (Java virtual Machine - Linux) 
+    -> display("Hello World") -> Linux Instruction set to print something 
+    -> Hello World (output)
+
+
+13. Bytecode is platform independent.
+14. Bytecode is only understood by JVM (Java Virtual Machine)
+15. JVM is a hypothetical machine which understand bytecode and responsible to execute it on any platform.
+16. Java is platform independent as it uses JVM and java code is executed by JVM but JVM itself is a platform dependent.
+17. In 2009 Sun Microsystems is adopted by Oracle.
+
+Environment Setup
+--------------------------
+1. jdk (java develpment Kit) - As as developer
+    - Java Libraries
+    - Java Compiler, Interpretor and other utility program
+    - Java docs (Removed from version - 8)
+
+2. As as consumer
+    - JVM (OS in-build)
+
+3. Set the java utility path (c:\program files\java\jdkX.x\bin) into the environment variable to access the java utility globally in your system.
+
+Other program / Software tools
+-----------------
+4. Editor -> A software used to write or edit your programs.
+    - Notepad
+    - Notepad++
+    - textpad
+    - Visual Studio Code (Recommanded)
+
+5. IDE (Integrated Development Environment) -> Editor + Compiler + Interpretor + Other utility tools (Warning -> Don't use them)
+    - Visual Studio Code
+    - Ecllipse
+    - Netbeans
+    - Intellij Idea
+
+Java Flavors
+---------------------
+    1. Java Standard Edition (Java SE) -> Core Java
+    2. Java Enterprise Edition (Java EE) -> Web Application + Enterprise Application
+    3. Java Mobile Edition (Java ME) -> Deprecated
+        - These days for Mobile development Android, IOS (Native application envrionment are used).
+
+Java Versions
+-------------------
+    1. Java 1.0 (1991)
+      -Java 1.1 (1992)
+    2. Java (jdk 1.2) (1993) -> Virtual Machine + (JIT -> Just in time) -> J2SE
+    3. Java (jdk 1.3) -> J2SE
+    4. Java (jdk 1.4) -> J2SE
+    5. Java (jdk 1.5) -> J2SE
+    6. Java (jdk 1.6) -> J2SE
+    7. Java 7 -> Java SE
+    8. Java 8
+    9. Java 9
+    ---------
+    Java 21
+
+OOPS
+---------------
+OOPS is a programming approach in which program is created with class and objects.
+
+Object
+------------
+Any real world entity is called an object.
+For ex: Pen, Car, mouse, keyboard, laptop, Account, Person, Student
+
+Every object has some properties associated with it.
+
+If `Person` is an object then properties are `name`, `age`, `height`, `gender`, `weight`, `address`
+
+If `Student` is an object then properties are `student_id`, `class`, `degree`, `college`, `university`
+
+If `Car` is an object then properties are `model`, `price`, `color`, `engine_capacity`, `fuel_type`, `brand`, `max_speed`, `mileage`
+
+Along with the properties every object has some behavior / Operations also.
+
+For example: 
+If `Car` is an object then the operations are `start`, `stop`, `accelrate`, `turn`, `change-gear`, `break`
+
+class 
+--------------
+class is a group of objects which have similar type of properties. Object is the snapshot / instance of a class.
+
+--------------------------------------------------------
+Create in Java Program - Hello World
+-----------------------------------------------------
+1. create a class name HelloWorld
+2. Save it into a filename HelloWorld.java
+3. Edit your program.
+4. Compile the program
+    - javac <program-name>
+    - javac HelloWorld.java
+5. After successfull compilation .class file generated
+    - HelloWorld.class (Byte code)
+6. To run the program, call the java iterpretor (JVM) by using `java` command
+    - java <.class name without .class extension>
+    - java HelloWorld
+7. Behind the Schene
+    HelloWorld.java (Source code) -> Compiler -> HelloWorld.class (Bytecode) -> JVM (java HelloWorld) -> Interpretor -> Display Result
+
+Important pointers
+------------------------
+1. Whenever you compile a java program, java compiler generate .class file for each class in your java program seperately.
+2. While running your program you have to supply the .class name (withour extension).
+3. Only those classes directly executed from the command line which have main method.
+4. The class which have main method is known as `Application class` or `Main class`
+5. If a class is `public`, then public class must be saved in a file with the same name of class name.
+6. A file can have only single public class.
+
+-----------------------------------------
+Command line Usage
+------------------------------------------
+1. Open the command line
+    - Start menu -> search cmd -> press enter
+2. To navigate withing directories
+    - CD(Change directory)
+        - cd <directory name or path>
+    - cd .. (Move into the parent directory)
+    - cd . (Move into the current directory)
+    - cd \ (Move into the root directory)
+    - d: (change the drive with d:)
+
+Today's Exercise Question
+---------------------------------
+1. Write a program to find the sum of two numbers
+2. Write a program to find the average of two numbers
+
+
+
