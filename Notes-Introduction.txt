@@ -191,4 +191,209 @@ Today's Exercise Question
 2. Write a program to find the average of two numbers
 
 
+Operator
+---------------
+1. a = 5 + 10 ---> Expression
+2. + and = are the operators
+3. 5, 10, and a are the operands or argument
+
+Type of operators
+------------------------
+1. Unary Operator (one arg. ex: -5)
+2. Binary Operator (two arg. ex: 5 + 6)
+3. Ternary Operator (3 arg: ?:)
+
+Type of operator as per the operations
+---------------------------------------------
+1. Arithmetic Operator
+2. Assignment Operator
+3. Relational Operator
+4. Logical Operator
+
+
+
+1. Arithmetic Operator
+------------------------------
++, -, *, /, %(Modulas) are the arithmetic operator
+
+a) a + b * c
+    1. -> b * c
+    2. a + (Result step 1)
+
+
+1. Rule of priority: It says that the operator which enjoy the higher priority will be executed first.
+
+2. Rule of Association: Some operator are execute from Left to Right and some others are executed Right to Left. 
+In case of Left to Right the operators are executes in Left to Right order.
+
+    priority table
+    ----------------    
+        1. *, /, %      L to R
+        2. +, -         L to R
+Example: 
+    a + b * c
+
+Example
+    a + b * c / d - e + f * g - h
+      4.  1.  2.  5.  6.  3.  7.
+
+Rules for the arithmetic Expression
+---------------------------------------
+1. int - int -> int
+2. float - float -> float
+3. float - int -> float
+4. int - float -> float
+-----------------------------------
+
+Example
+---------------
+5 / 2 -> 2
+5.0 / 2 -> 2.5
+5 / 2.0 -> 2.5
+5.0 / 2.0 -> 2.5
+
+2 / 5 -> 0
+2.0 / 5 -> 0.4
+2 / 5.0 -> 0.4
+2.0 / 5.0 -> 0.4
+
+5 / 0 -> ArithmeticException: / by Zero
+5.0 / 0 -> +Infinity
+-5.0 / 0 -> -Infinity
+
+---------------------------------------------------
+
+int a;                  System.out.println(a);
+a = 5 / 2;              2
+a = 5.0 / 2;            2(C/C++), JAVA - Error
+a = 5 / 2.0;            Error
+a = 2 / 5               0
+a = 2.0 / 5             Error
+
+----------------------------------------------------
+
+double d;               System.out.println(d)
+d = 5 / 2;              2
+d = 5.0 / 2;            2.5
+d = 2 / 5;              0
+d = 2.0 / 5;            0.4
+------------------------------------------------------
+
+Modulas / Mod Operator
+-------------------------
+% returns the remainder
+
+5 % 2 -> 1
+2 % 5 -> 2
+----------------------
+
+How Mod and divide works?
+-------------------------------
+22 / 5 -> 4
+22 % 5 -> 2
+
+Examples:
+--------------
+7 % 5 -> 2
+-7 % 5 -> -2;
+7 % -5 -> 2
+-7 % -5 -> -2
+3.4 % 2 -> In C/ C++ floating point values with % operator are not allowed but allowed in java.
+        -> 1.4
+
+---------------------------------------------------
+
+Exercise
+---------------
+1. Get an amount then your program should print the possible indian
+domainants
+
+amount = 21347
+
+2000 x 10 = 20000
+500 x 2 = 1000
+100 x 3 = 300
+50 x 0 = 0
+20 x 2 = 40
+10 x 0 = 0
+5 x 1 = 5
+2 x 1 = 2
+1 x 0 = 0
+
+2. Enter time in hours
+    304 hours
+    Hours -> ?
+    Minutes -> ?
+    Seconds -> ?
+
+-----------------------------------------------
+
+Assignmet operator (=) -> R To L, Very LOW 
+----------------------------------------------
+Move the value to a variable from R To L.
+
+Example:
+    a = 5;
+    b = a + 2;
+    c = b;
+
+    a = b = 5;    
+
+Example:
+    5 = 2; // Error
+    5 = a; // Error
+    5 = a + 2; // Error
+    a + 2 = 5;
+Note: On the left hand side of assignment operator always there should be a variable. otherwiser it would be a compile time error.
+
+-------------------------------------------------------------------
+
+Steps of Learning English
+------------------------------
+1. Alphabets ->  Words -> Sentance -> Paragraph
+
+Steps of Learning JAVA
+-------------------------------
+1. Character Set -> Constant / Variables/ Opeators -> Instruction -> Program
+
+-------------------------------------------------------------------
+
+Character Set
+-----------------
+    Allowed set of charaters in JAVA.
+    
+    1. Alphabets -> A - Z/ a - z
+    2. Digits -> 0 - 9
+    3. White Spaces -> spaces, tabs, new lines
+    4. Special Symbols -> , ; - _ @ #
+
+Constant
+------------
+    a = b + 5; -> In this expression, 5 is a constant and a,b are variables.
+
+Constant -> is an entity which never change during the program execution.
+
+Types of Constants
+--------------------
+1. Integer Constant -> Only integeral values, No decimal values
+    ex: 5, -5 , 0, 2345
+
+    Rules
+    -----------
+    1. +ve / -ve
+    2. No Decimal points
+        Example: 2.0, 2.
+    3. Spaces and special symbol are not allowed
+        Example: 32,456 (wrong) , 32456(right) , 32_456(Right -> After java 7)
+    4. Range:
+            -2147483648 to 2147483647
+    5. Format:
+        0b0000_0000_0000_0101(binary)
+        0156 (octal)
+        0x65AF (hex)
+2. Deciaml Constant
+
+3. Charater Constant
+
+4. String Constant
 
