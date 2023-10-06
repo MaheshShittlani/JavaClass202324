@@ -380,6 +380,7 @@ Types of Constants
 
     Rules
     -----------
+    0. Decimal values are not allowed
     1. +ve / -ve
     2. No Decimal points
         Example: 2.0, 2.
@@ -392,8 +393,108 @@ Types of Constants
         0156 (octal)
         0x65AF (hex)
 2. Deciaml Constant
-
+        Ex: 5.5, 9.3, 0.5678, 9.1234
+    Rules
+    -----------------
+        1. Decimal values are allowed
+        2. +ve / -ve
+        3. Spacies and special symbols are not allowed
+            1.3 4567(wrong), 1.34567(correct), 1.34,5678(wrong)
+        4. Format
+            Fixed Format (0.0007)
+            Exponent Format (0.7E-3) => 0.7 x 10^-3
+                0.7 => Mantisaa
+                -3 => Exponent
+        
 3. Charater Constant
+        Ex: 'A', 'Z', '$', '#' or any other character constant
+        Ex: 'AZ'(wrong), '$A'(wrong)
+    Rules:
+    --------
+        1. Character constant must be a single character
+        2. It must be enclosed in single quotes.
+        3. Character constant can be written in multiple ways
+            'A' (Direct Single Character)
+            '\u0065' (Unicode)
+        4. 5 -> 0101, 'A' => Binary?
+        5. How characters will be converted to binary. So there will be a unique numeric value associated with each character. This is represented by Character Encoding.
+            Character Encoding
+            ----------------------
+                1. ASCII (American standard code for information interchange)
+                    - 256 characters covered into ASCII
+                    - Range: 0 - 255
+                2. Unicode
+                    - covers 65536 character
+                    - Range 0 - 65535 
+                    - First 256 characters are same as ASCII.
+                    - 0         255                65535
+                       ---Ascii---                    
+                       ----------------Unicode----------
 
-4. String Constant
+            Characters              ASCII/Unicode
+            -------------------------------- 
+            A - Z                   65 - 90
+            a - z                   97 - 122
+            0 - 9                   48 - 57
+            Space                   32
+            Enter                   13
+            Smile                   1
 
+4. String Constant - Group of characters
+    Ex: "Alex", "alex@email.com", "JKLO89076F"
+    Rules:
+    ---------
+        1. String constant must be enclose in double quotes.
+5. Boolean Constants
+    Ex: true, false
+    Rules:
+    -------
+        1. Only true and false are considered boolean constants.
+        2. false != 0
+        3. true != 1
+
+Binary Conversion
+-----------------------
+    -Decimal Number System (0 - 9)
+        134
+
+        1           3              4
+      10^2         10^1           10^0
+
+    (1 * 100) +   (3 * 10)  +     (4 * 1)
+
+    position in decimal number system
+    10000        1000       100     10    1
+    -------------------------------------------------
+    - Binary Number System (0 -1)
+
+    0           1              0           1
+   2^3          2^2            2^1         2^0
+  (0 * 8) +     (1 * 4)   +    (0 * 2)  +  (1 * 1)
+    0       +       4       +   0       + 1         => 5
+
+    position in binary number system
+    256    128    64    32    16    8    4    2    1
+----------------------------------------------------------------
+Example: 17 => Binary equivalent of 17 ?
+    256    128    64    32    16    8    4    2    1
+                               1    0    0    0    1                             
+
+
+Example: 39 => Binary equivalent of 39 ?
+    256    128    64    32    16    8    4    2    1
+                        1      0    0    1    1    1           
+
+
+Example: 1011011 => what it is in decimal
+
+256    128    64    32    16    8    4    2    1
+               1    0      1    1    0   1    1
+               64 +  0   + 16 +  8 + 0 + 2  +  1   => 91
+
+Octal Number System (0-7)
+    8^3    8^2    8^1    8^0
+
+Hexadecimal Number System (0-9, A - F)
+    16^4    16^3    16^2    16^1    16^0
+    1          1    1       1       1
