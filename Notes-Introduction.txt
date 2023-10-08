@@ -679,3 +679,133 @@ How Binary Number system built in
 4. Long Range: -2^63 to 2^63-1
 
 Note: Float / Double range can't be calculate as similar to the above.
+
+unsigned byte a; 0 to 2^8-1 (0 to 255)
+With unsigned, only +ve values are allowed but in the same memory space we can store the double values.
+
+Note: In java, unsigned is not a keyword and not allowed to create a variable unsigned. But In java character values are always unsigned.
+
+operators
+------------------
+    1. Arithmetic operators
+    ---------------------------------
+        +, - , *, /, %
+    
+    Rules for the Arithmetic Expression
+    ------------------------------------
+    1. Rule Of Priority
+    2. Rule Of Associativity
+    3. int - int -> int, float - float -> float, int - float -> float
+    4. In java only widening is allwoed but narrowing is not allowed by default.
+        byte < short < int < long < float < double
+        -------------------------------------------> Widening
+Narrowing <-------------------------------------------
+
+        Example:
+        -----------------
+        1.    int a = 5;
+            byte b = a; // Compile time error
+
+        2. int a = 5;
+            byte b;
+            b = (byte)a; // OK
+
+        3. float f;
+            f = 3.0; // Error: Narrowing, double to float.
+            f = 3.0f; // OK
+
+Note: By default every floating point constant is treated as double. To treat it float suffix with `f`. Here `f` is called modifier.
+    Example: 3.0 (Double), 3.0f(float)
+
+Note: By default every integer constant is `int` to treat it `long` suffix with `l`. Here `l` is a modifier.
+    Example:   3(int), 3l(long)
+
+        4. int i = 2147483648; // Error, number is too large
+            long l = 2147483648; // Error, number is too large
+            long l = 2147483648l; // OK
+
+        5. byte b = 5;
+            s.o.p(b); // 5, OK
+Note: If an integer is withing the range of lower data type than integer means (byte, short) then it works fine. But out of range values promts compile time error.
+        6. byte b;
+        b = 130; // Error
+
+        7. int i = 125;
+            byte b;
+            b = i; // Error,Narrowing, int to byte
+            s.o.p(b);
+        8. byte a = 5, b = 6;
+            byte c = a + b; Error, Becoz of Narrowing.
+            s.o.p(c);
+Note: When byte, short are invloved in any arithmetic expression then they are promoted to int first and then arithmetic is performed so the output will always belongs from int.
+        9. byte a = 5, b = 6;
+            byte c = (byte)(a + b);
+            s.o.p(c);
+
+        10. short s = 65;
+            char c = 65;
+Note: Even char and short both occupy 2 bytes of memory but the conversion from char to short or short to char are not allowed as char don't expect any -ve values.    
+
+
+    2. Assignment Operator (=)
+    --------------------------------
+    Precedence -> Very low
+    Association -> R to L
+    --------------------------
+    a = 5;
+    b = a;
+    c = a + b;
+----------------------------------------------
+    c = b = a = 5; // R to L
+---------------------------------------------------------
+    5 = a; // Error, Lvalue Required
+    5 + a = b; // Error, Lvalue Required
+--------------------------------------------------
+
+
+Compound Assignment
+-----------------------
+    +=, -=, *=, /= , %=
+
+    a += 5          a = a + 5
+    a -= 5          a = a - 5
+    a *= 5          a = a * 5
+    a /= 5          a = a / 5
+    a %= 5          a = a % 5
+
+-------------------------------------------------
+Example:
+    byte b = 5;
+    b = b + 2; // Error, conversion int to byte
+    s.o.p(b);
+
+Example:
+    byte b = 5;
+    b += 2;
+    s.o.p(b); // 7
+
+Note:
+    In case of shorthand operator, the typecasting is automatically performed.
+
+Unary Operator
+---------------------
+    +, -, ++, --, typecast
+
+Example:
+    -5, Here - is a unary operator.
+
+    Increment(++) / Decrement(--) Operator
+    -----------------------------------------
+    - These operator comes into two Flavors
+        - Postfix
+        - Prefix
+    
+        Prefix                  |               Postfix
+    --------------------------------------------------------------
+1.  int a = 5;                  |           int a = 5;
+    ++a;  ------------>     a = a + 1;   <----- a++;
+    s.o.p(a); //6               |           s.o.p(a); // 6
+
+2. int a = 5, b;                |       int a = 5, b;
+    b = ++a; //a = a + 1; b = a;|       b = a++; // b = a; a = a + 1;
+    s.o.p(a+", "+b);6 , 6       |       s.o.p(a + ", " + b); 6, 5        
