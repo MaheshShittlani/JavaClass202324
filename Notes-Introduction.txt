@@ -809,3 +809,174 @@ Example:
 2. int a = 5, b;                |       int a = 5, b;
     b = ++a; //a = a + 1; b = a;|       b = a++; // b = a; a = a + 1;
     s.o.p(a+", "+b);6 , 6       |       s.o.p(a + ", " + b); 6, 5        
+--------------------------------------------------------------------
+
+Example:
+-------------
+    int a = 5, b = 6, c;
+    c = ++a * ++b;
+    s.o.p(a, b, c);// 6 7 42
+
+    int a = 5, b = 6, c;
+    c = a++ * b++;
+    s.o.p(a, b, c);//6 7 30
+
+    int a = 3, b = 4, c;
+    c = ++a * b++;
+    s.o.p(a, b, c); // 4, 5, 16
+
+    int a = 3;
+    b = ++a * ++a; // 4 * 5
+    s.o.p(a, b); // 5, 20
+
+    s.o.p(++5); // 5 = 5 + 1; , Error 
+
+    byte b = 3;
+    b = b + 1; // Error, int to byte
+    s.o.p(b);
+
+    byte b = 3;
+    b++; // b = b + 1; // OK
+    s.o.p(b); // 5
+
+Note: In case of shorthand operator typecast is automatically performed.
+
+Typecasting
+------------------
+    type2 = (type2) type1;
+
+
+Relational Operator (Boolean operators)
+-----------------------------
+    >           -       Greater than
+    <           -       Less than
+    >=          -       Greater or Equal
+    <=          -       Less or Equal
+    ==          -       Equality
+    !=          -       Not Equal   
+    instanceof  -       User with class and object
+
+    It is used to compare two or more values and return the result in  boolean means true or false.
+
+    5 > 2   -> true
+    5 < 2   -> false
+
+    5 == '5' -> false
+    5 == "5" -> Error: Can't convert string to int
+    3 == 3.0 -> true
+
+     
+
+Logical operators
+--------------------------
+!           &&          ||
+(Not)       (AND)       (OR)
+
+1. && and || operator are used to combine two or more conditions(Relations).
+    Example:
+    -------------
+        age > 18 && gender == 'm'
+        age > 18 || gender == 'm' 
+2. Each condition can be true or false then what will be the final output of expression combined by && or ||.
+3. The final result of expression is computed by a truth table.
+4. Truth table it the combination of conditions and their result.
+
+    c1      c2          c1 && c2            c1 || c2
+    --------------------------------------------------
+    F       F           F                   F
+    F       T           F                   T
+    T       F           F                   T
+    T       T           T                   T
+
+
+Examples:
+------------
+    Example-1:
+    --------------
+    int a = 5, b = 6, c;
+    c = a > 2 && b > 3; // Error, can't convert boolean to int
+    s.o.p(a, b, c);
+
+    Example-2:
+    ------------------
+    int a = 5, b = 6;
+    boolean c;
+    c = a > 2 && b > 3; 
+    s.o.p(a, b, c); // 5, 6, true
+
+    Example-3:
+    ---------
+    5 > 3 > 1 => true > 1 => Error, boolean to int converstion
+
+    Example-4:
+    5 > 3 &&  3 > 1 -> true
+
+
+    Example-5:
+    -----------
+    int a = 5, b = 6;
+    boolean c;
+    c = a > 2 && b > 3;
+    s.o.p(a, b, c); //5, 6, true
+
+    Example-6:
+    int a = 5, b = 6;
+    boolean c;
+    c = a < 3 && b > 2;
+    s.o.p(a,b,c); // 5, 6, false
+
+    Example-7:
+    s.o.p(4 && 5); // Error
+
+    Example-8: (Short circuit behavior)
+    -------------
+    int a = 3, b = 4;
+    boolean c = a > 5 && ++b > 2;
+    s.o.p(a,b,c); 3, 4, false
+
+    Example-9:
+    ------------
+    int a = 3, b = 4;
+    boolean c = a > 5 || ++b > 2;
+    s.o.p(a,b,c);// 3, 5, true
+
+Not operator(!)
+----------------------
+    C       !C
+    -----------------
+    T       F
+    F       T
+
+    Example-10:
+        int a = 10;
+        boolean b = !a; // Error, int to boolean
+        s.o.p(a, b); 
+
+    // !a => !10 => // Error, int to boolean
+
+
+    Example-11:
+        int a = 10;
+        boolean b = !(a > 2);
+        s.o.p(a, b); 10 false
+
+    Example:12
+        n => between 5 to 10
+        int n = 11;
+        boolean result = n >= 5 && n <= 10
+        s.o.p(result); false
+
+    Example:13
+        create a range that is not between 50 to 100
+        int n = 11;
+        boolean result = !(n >= 50 && n <= 100)
+            OR
+        boolean result = n < 50 || n > 100;
+
+Complement Relation
+--------------------------
+!>          <=
+!<          >=
+!>=         <
+!<=         >
+!!=         ==
