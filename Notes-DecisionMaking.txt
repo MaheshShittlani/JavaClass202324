@@ -1,0 +1,92 @@
+Decision Making statement / Conditional Statement
+--------------------------------------------------
+
+1. if - else statement
+2. if statement
+3. Nested if else statement
+4. else if ladder
+5. conditional operator
+6. switch case control statement
+
+
+--------------------------------------------------------
+if-else statement
+-------------------------------------------------------
+    syntax
+    ----------
+
+if(condition) {
+    statement-1; 
+    statement-2;    // If block
+    statement-3;
+} else {
+    statement-1;
+    statement-2;    // else block
+    statement-3;
+}
+
+Execution: If condition is true, then the if-block will be executed otherwise else block will be executed.
+
+Note:
+----------
+    System.currentTimeMillis(): - Return the current timestamp in milli seconds.
+
+Timestamp: 
+    The total number of seconds elapsed from 1-Jan-1970's Mid night. This is also known as Unix Timestamp / Unix Epoch.
+
+Assingment: 
+    Convert the currentTimeMillis() in HH:MM:SS
+
+------------------------------------------
+3 % 2 -> 1
+4 % 2 -> 0
+5 % 2 -> 1
+6 % 2 -> 0
+
+---------------------------------------------
+
+3 % 3 -> 0
+4 % 3 -> 1
+5 % 3 -> 2
+6 % 3 -> 0
+7 % 3 -> 1
+8 % 3 -> 2
+
+-----------------------------------
+Generating random number with System.currentTimeMillis()
+--------------------------------------------------------------
+System.currentTimeMillis() % 10 -> Generate number from to 9.
+
+Generate number with Math.random()
+---------------------------------------
+Math.random() -> Returns the numbrer between 0.0 to 1.0
+(int)(Math.random() * 100) -> Return numbers from 0 to 99. 
+
+(Generate random numbers between 50 to 100)
+(int)(Math.random() * 50) + 50
+
+Generate any range from `lb` to `ub`
+----------------------------------------
+(int)(Math.random() * (ub - lb)) + lb
+
+Example: Range between 22 to 77
+--------------------------------
+(int)(Math.random() * (77 - 22)) + 22
+
+
+if statement
+---------------------
+ if(condition) {
+    statement-1;
+    statement-2;
+    statement-3;
+ }
+
+Exercise:
+----------------
+    1. Generate 3 random numbers and Find the average of 3 numbers.
+    2. Calculate the area of ractangle
+            area = breadth * length;
+    3. Convert the temprature from fahrenheit to centigrade.
+            C = (F - 32) * 5 / 9
+    4. Print the current time in HH:MM:SS
