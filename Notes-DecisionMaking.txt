@@ -90,3 +90,60 @@ Exercise:
     3. Convert the temprature from fahrenheit to centigrade.
             C = (F - 32) * 5 / 9
     4. Print the current time in HH:MM:SS
+----------------------------------------------------
+Receiving User Inputs
+    - Too many mathods
+    - Going to use Console method
+
+java.io.Console con = System.console();
+int a = Integer.parseInt(con.readLine());
+
+-----------------------------------------
+java library structure / Packaging system
+-----------------------------------------
+                java
+
+lang        io          util       net 
+(Auto import)
+
+System      Console                             
+String
+Integer
+Float
+Double
+
+-------------------------------------------------
+java.lang.System
+java.io.Console
+
+---------------------------------------
+import java.lang.System; (auto)
+import java.lang.String; (auto)
+
+import java.io.Console; (Mannual)
+
+-------------------------------------------------
+Parsing Methods
+------------------------------
+Integer.parseInt(String)
+Float.parseFloat(String)
+Double.parseDouble(String)
+Byte.parseByte(String)
+
+    XXX.parseXXX(String)
+
+----------------------------------------------
+1. Generate a number and find it is positive, negative or zero.
+2. Generate a number and check it is even or odd.
+3. Input an year and check it is a leap year or not.
+4. Generate 3 subject marks between 0 to 100, Find the grade as per the following rules
+----------------------------------------------------------
+
+per             grade
+-------------------------
+>=85            S
+75-85           A
+65-75           B
+55-65           C
+50-55           D
+<50             F
