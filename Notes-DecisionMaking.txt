@@ -147,3 +147,139 @@ per             grade
 55-65           C
 50-55           D
 <50             F
+
+5. Enter any year, and find the first day of the year.
+    Note: 1/1/1 -> Monday
+1/1/Y -> ?
+
+Conditional operator (?:) - Ternary operator
+--------------------------- 
+Syntax
+-----------
+    condition ? statement if true : statement if false;
+
+Example:
+    max = a > b ? a : b;
+
+    max = a > b ? (a > c ? a : c)
+                : (b > c ? b : c)
+
+    isEven = n % 2 == 0 ? true: false;
+
+
+    System.out.println(n+ " is " + (n >= 0 ? "+ve": "-ve"));
+    System.out.println(n + " is " + (n % 2 == 0 ? "Even": "Odd"));
+
+Switch/ Case control statement
+------------------------------------
+    switch(Variable / Expression) {
+        case constant-1:
+            statement-1;
+            statement-2;
+        case constant-2:
+            statement-1;
+            statement-2;
+        case constant-3:
+            statement-1;
+            statement-2;
+        default:
+            statement-1;
+            statement-2;
+    }
+
+
+Example:
+--------------
+    Enter any day between 0 to 6 and find the day
+        0   -       Sunday
+        1   -       Monday
+        2   -       Tuesday
+        3   -       Wednesday
+
+        ------------------------
+        -------------------------
+        8   -       Invalid day
+
+Note: break - Jumps the control out of the current block. It works only in switch and loops.
+
+Exercise:
+    Enter any month, and print the number of days in the month.
+
+Rules for switch/case construct
+------------------------------------
+1. Case constant must be an integer constant, character constant, string constant (java-7).
+    Floating point, boolean constants are not allowed.
+
+        case 1: // OK
+        case 'A': // OK
+        case "Java": // OK (java-7)
+        case '_':
+        case "_JAVA":
+
+        case 6.5: // Wrong
+        case true: // Wrong
+
+2. Only constant and constant expressions are allowed, variable and variable expressions are not allowed.
+        case 5: // OK
+        case 5 + 6: // OK
+        case 'A' + 5: // OK
+
+        case x: // Not allowed
+        caes a + b: // Not allowed
+        case a + 5: // Not allowed
+
+3. Ranges are not allowed.
+        case n >= 5 && n <= 10: // Not allowed
+        case 5 - 10: // Wrong interpertation
+        case 5 to 10: // Not allowed
+        case >=5 && <=10: // Not allowed
+
+    How to write range (5-10) with case
+        case 5:
+        case 6:
+        case 7:
+        case 8:
+        case 9:
+        case 10:
+            ------
+
+4. Duplicate cases are not allowed within the same switch construct.
+    case 5:
+    case 2 + 3: // Not allowed
+
+    case 'A':
+    case 65: // Not allowed
+
+5. switch, break, case, default all are the keywords in which break and default are optional to write. Use as per the requirement.
+
+6. It is a good pragramming practise to maintain the order of case constant but not mandatory.
+
+------------------------------------------------------------------
+
+Character input:
+-------------------------
+Console con = System.console();
+
+System.out.print("Enter your gender, say(M/F): ");
+char gender = con.readLine().charAt(0); 
+
+---------------------------------------------------------
+0. First Day of the year (1-1-Y)
+    Hint: 1-1-1 -> Monday
+1. Create a calculator for the operations (+, -, * , / , %).
+    Hint: Use swich
+2. Enter any character and check the following
+    - It is an alphabet ?
+        - It is in uppercase or lowercase
+        - It is a vowel or consonent
+    - It is a digit
+    - It is a white space (space, tab (\t), newline(\n))
+    - It is special symbol
+3. Driver is eligible for insurrance? 
+
+Marital Status(M/U)       Gender         Age                 Insurred?
+--------------------------------------------------------------------
+M                           -              -                    Yes
+U                           M              >=30                 Yes
+U                           F              >=25                 Yes
+----------------------------------------------------            No
