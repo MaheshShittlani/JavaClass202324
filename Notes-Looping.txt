@@ -74,3 +74,19 @@ Exercise:
         - If guess < number, then "Your guess is too low".
 
     Exit the program when user guess the correct number.
+
+Exercise:
+---------------
+1   0   1   0   1   0   ....N terms
+1   -1  1   -1  1   -1      ....N terms
+1   -3  5   -7  9   -11 13  -15 N terms
+1   11  111 1111    11111       Nterms
+
+Lottery
+-------------
+1. Generate a 2 digit random number
+    Input the guess from the user for the lottery.
+        - It number is exact match, then User wins 10000/-
+        - If any both of the digits match, then User wins 5000/-
+        - If one one digit match, then user wins 2000/-
+        - Otherwise User lost the game.
