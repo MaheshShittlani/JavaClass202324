@@ -263,3 +263,108 @@ number 4388576018410707 is valid.
 7.Write a program that prompts the user to enter a credit card number as a long 
 integer. Display whether the number is valid or invalid. Design your program to 
 use the following methods:
+
+-------------------------------------------------------------
+Jump Statement
+--------------------------------------------------------
+It jumps the control from one place to another and change the normal flow of the program.
+
+    - break
+    - continue
+    - goto
+    - exit
+    - return
+
+    - try-catch // Discuss this later in further chapters
+
+1. break
+    - It jumps the control out of the current block. It works only within the loop and switch.
+
+        for(int i = 1; i <=5; i++) {
+            if(i == 3) {
+                break;
+            }
+            System.out.print(i);
+        }
+        //1 2
+
+
+        for(int i = 1; i <= 5; i++) {
+            for(int j = 1; j <= 5; j++) {
+                if(j > i) {
+                    break;
+                }
+                System.out.print(j);
+            }
+            System.out.println();
+        }
+
+        1
+        12
+        123
+        1234
+        12345
+Note: It works within the loop and switch.
+
+2. continue
+    - It repeat the loop for the next round and skip all the statements written after it.
+
+    for(int i = 1; i <= 5; i++) {
+        if(i == 3) {
+            continue;
+        }
+        System.out.print(i);
+    }
+    1 2 4 5
+
+Note: it works only within the loop.    
+
+
+    int i = 1;
+    while(i <= 10) {
+        i++;
+        continue;
+        System.out.print(i); // Unreachable code
+    }
+Note: In C/C++, Unreachable code is warning but in java it is a compile time error.
+
+Labelled loop:
+    outer: for(int i = 1; i <= 5; i++) {
+        System.out.println();
+        inner: for(int j = 1; j <= 5; j++) {
+            if(j > i) {
+               continue outer;
+            }
+            System.out.print(j);
+        }
+    }
+
+    1
+    12
+    123
+    1234
+    12345
+
+goto: Deprecated from java1.2 / Java2
+exit: Terminates the program / process.
+    System.exit(1)
+        Exit Status: 
+            1 -> EXIT FAILUE
+            0 -> EXIT SUCCESS
+
+    if(age < 0) {
+        System.out.println("Invalid age");
+        System.exit(0);
+    }
+
+return: User with methods will discuss further.
+
+---------------------------------------------------
+class A {
+    public static void main(String ...args) {
+        int a;
+        System.out.println(a);
+    }
+}
+
+Error: As any unititalized local variable if used is a compile time error in java.
