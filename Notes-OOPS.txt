@@ -1,0 +1,13 @@
+OOPS (Object Oriented Programming Structure): 
+    It is a programming approach / Paradigm in which program is created with objects (class).
+
+What is the Object:
+-----------------------
+Object is a real world entity which have some properties / behaviors (actions) associated with it.
+
+For example: if car is an object the properties are...
+    model, make, price, color, brand, maxspeed, currentSpeed, number_of_gears and many more...
+
+    and behaviors associated with the car are...
+    start(), stop(), accelarate(), break(), turn(), changeGear()
+
