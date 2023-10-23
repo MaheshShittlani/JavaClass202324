@@ -11,3 +11,62 @@ For example: if car is an object the properties are...
     and behaviors associated with the car are...
     start(), stop(), accelarate(), break(), turn(), changeGear()
 
+
+What is the class?
+------------------------
+1. Class is the group of objects which have similar properties.
+
+2. Class is a template / blue print which have all the instructions that how object will behave and what properties object have.
+
+3. Object is the instance(screenshot) of the class whereas class is the description of the object.
+
+4. class is a logical entity which physical representation is realized by an object.
+
+5. Once a class is crated it becomes a data type which variables are called an object.
+
+
+Creating a class 
+-----------------------
+    class <class Name> {
+        member
+
+        returntype method1() {
+
+        }
+        returntype method2() {
+
+        }
+    }
+
+
+Example:
+    class Circle {
+
+    }
+Creating an object
+------------------------
+    2 step process
+    -------------------->
+        1. Creating reference variable
+        -------------------------------
+        Circle c1;
+        Circle c1, c2, c3;
+
+        2. Creating an object
+        ----------------------
+            c1 = new Circle();
+            c2 = new Circle();
+
+        3. Both in single step
+        ------------------------
+            Circle c1 = new Circle();
+
+
+Primitive Varaible V/S Reference varaible
+----------------------------------------------
+    A variable is a cup of tea.
+1. A primitive variable is a cup of tea which contains the binary value of a variable. Means a primitive variable itself contains data.
+
+2. A reference variable doesn't contains object data, it have a way to send the instruction to the object.
+
+    For example - If reference variable is a cup of tea then it contains remote control to send the instruction to the object but it doesn't contains the object data.
