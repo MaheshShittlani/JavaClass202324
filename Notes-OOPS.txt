@@ -24,6 +24,10 @@ What is the class?
 
 5. Once a class is crated it becomes a data type which variables are called an object.
 
+6. class is a combination of `data` as well as `operations` that can be performed on that data.
+This way class defined an encapsulation.
+
+7. Abstraction - Hides the internal details fro the external user. Methods defines first level of Abstraction as the user of the method don't need to know that how the operation is performed. Only he need to learn that how to use the method.
 
 Creating a class 
 -----------------------
@@ -70,3 +74,144 @@ Primitive Varaible V/S Reference varaible
 2. A reference variable doesn't contains object data, it have a way to send the instruction to the object.
 
     For example - If reference variable is a cup of tea then it contains remote control to send the instruction to the object but it doesn't contains the object data.
+
+-------------------------------------------------
+Default value for the class members
+----------------------------------------
+integeral -> 0
+real (float, double) -> 0.0
+boolean -> false
+char -> \u0000 (0)
+Object -> null
+
+
+Exercise Question
+-------------------------
+Q1) Enter a month and year and find the 1 day of that month-year.
+Q2) Create a class `BankAccount` with the following members...
+    accountNumber
+    accountHolderName
+    balance
+
+    deposit(int amount)
+    withdraw(int amount)
+    getBalance()
+    getAccountInfo()
+--------------------------------------------------
+
+`this` variable
+
+class Person {
+    private String name;
+    private int age;
+
+   public void setAge(int a) {
+        if(a > 0 && a < 100) {
+            age = a;
+        } else {
+            age = 1;
+        }
+   }
+
+   public void setName(String n) {
+        name = n;
+   }
+
+   public int getAge() {
+    return age;
+   }
+
+   public String getName() {
+       return name;
+   }
+
+   public void display() {
+    System.out.println(name+"  is " + age + " years old");
+   }
+}
+
+
+Person p1 = new Person();
+
+---p1---           
+    |
+    |
+    --------------------
+        name = null
+        age = 0
+    ---------------------
+
+Person p2 = new Person();
+
+---p2---
+    |
+    |
+    --------------------
+        name = null
+        age = 0
+    ---------------------
+
+
+1. p1.name, p1.age
+2.  void setName(n, this) {
+        this.name = n;
+    }
+
+    p1.setName("Alex",p1);
+    |                 |  
+    ------------------|
+
+---p1---          ----this--             
+    |                   |
+    |                   |
+    ----------------------
+        name = null
+        age = 0
+    -----------------------
+
+`this` is a variable inside the class which refere to the current object.
+
+whenever an object make a call to the method, the copy of the referece is automatically passed as an agrument and this copy is received by this variable inside the method definition and all the members of the class are automatically prefixed with `this.`. This is called implicit use of `this` variable.
+
+This way all members belogs to the current object as `this` variable have the copy of current object reference.
+
+
+If the name of the local member and the class member becomes same then the local member hides the class member. the feature is known as `Instance member hiding`.
+
+In this situation, to differentiate the class member from the local member we must prefix the class member with `this.`. It is called explicit use of this variable.
+
+void setName(String name) {
+    this.name = name;
+}
+
+
+----------------------------
+
+class Person {
+    private String name;
+    private int age;
+
+   public void setAge(int age) {
+        if(age > 0 && age < 100) {
+            this.age = age;
+        } else {
+            this.age = 1;
+        }
+   }
+
+   public void setName(String name) {
+        this.name = name;
+   }
+
+   public int getAge() {
+    return age;
+   }
+
+   public String getName() {
+       return name;
+   }
+
+   public void display() {
+    System.out.println(name+"  is " + age + " years old");
+   }
+}
