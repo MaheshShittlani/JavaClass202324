@@ -17,5 +17,12 @@ public class TestPerson3 {
 
         p1.display();
         p2.display();
+
+
+        Person p3 = new Person();
+        // p3.name = p2.name; Error
+        p3.setName(p2.getName());
+        // p3.age = p2.age;
+        p3.setAge(p2.getAge());
     }
 }

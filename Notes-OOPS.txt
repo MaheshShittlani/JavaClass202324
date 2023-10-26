@@ -215,3 +215,44 @@ class Person {
     System.out.println(name+"  is " + age + " years old");
    }
 }
+
+--------------------------------------------------------------
+Constructors
+--------------------------------------------------------------
+Person p1 = new Person();
+
+1. Constructor is a special method which name is same as the class Name and it is called when an object is created.
+2. Constructor is used to intialize the class members.
+3. Generally constructor is defined with public access.
+4. Constructor don't have any return type even void.
+5. A class can have multiple constructor with different parameters means constructor overloadding is allowed.
+6. If we don't create any constructor in our class then JVM supplies a default constructor in our class. 
+7. If we create any one constructor in our class then JVM stop the supply of default constructor.
+8. You can create the object only with the available constructor in the class.
+
+class Circle {
+    private int radius;
+
+    
+
+    public Circle(int radius) {
+        this.radius = radius;
+    }
+
+    void setRadius(int radius) {
+        this.radius = radius;
+    }
+}
+
+Circle c1 = new Circle(); // radius = 1
+c1.setRadius(5);
+
+Circle c2 = new Circle(3);
+
+-------------------------------
+
+Type of Constructors
+--------------------------------------------------------------------
+1. Default Constructor / No Parameter Constructor
+2. Parameterized Constructor
+3. Copy Contructor
