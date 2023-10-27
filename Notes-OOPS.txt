@@ -256,3 +256,61 @@ Type of Constructors
 1. Default Constructor / No Parameter Constructor
 2. Parameterized Constructor
 3. Copy Contructor
+
+Calling other constructor of same class from a constructor.
+-----------------------------------------------------------------
+1. Use of this() method
+    - Used to call the other constructor of same class.
+
+
+
+**************************************
+    Method Overloadding
+**************************************
+
+sum(int x, int y)
+sum(int x, int y, int z)
+sum(float x, float y)
+sum(float x, float y, float z)
+sum(int x, float y)
+sum(float x, int x)
+
+------------------------------
+sum(4,5);
+sum(4,5,6);
+sum(4.4f, 5.4f, 6.4f);
+
+******************************************
+`Method Overloadding` allows you to create multiple methods with the same name but different parameters.
+
+Methods of Overloadding
+-----------------------------
+1. Number of Parameter
+    sum(int, int)
+    sum(int, int, int)
+2. Type of parameter
+    sum(int, int)
+    sum(float, float)
+3. Order of parameter
+    sum(int, float)
+    sum(float, int)
+
+---------------------------------
+    int div(int a, int b) {
+        return a / b;
+    }
+
+    float div(int a, int b) {
+        reutrn (float)a / b;
+    }
+
+Note: div method is not a correct way of overloadding as method overloadding is only allowed based on the parameters not return type.
+
+-----------------------
+12345
+
+Even digits
+------------------
+    lastTwoDigits = 12345 % 100
+    eventDigit = lastTwoDigits / 10
+    number = number / 100;
