@@ -307,10 +307,160 @@ Methods of Overloadding
 Note: div method is not a correct way of overloadding as method overloadding is only allowed based on the parameters not return type.
 
 -----------------------
-12345
 
-Even digits
-------------------
-    lastTwoDigits = 12345 % 100
-    eventDigit = lastTwoDigits / 10
-    number = number / 100;
+
+Instance and Static Data members
+------------------------------------
+
+class  A {
+    private int x;
+    private static int y;
+}
+
+A a1 = new A();
+A a2 = new A();
+A a3 = new A();
+---------------------
+    - JVM look for the A.class that it exists in the memory or not. If not then it loads A.class into the memory.
+    - All the static member of A.class will receive the memory as class is loaded.
+        y = 0;
+    - After that object `a1` receives the memory and initialize its instance members;
+        a1----> -----------
+                    x = 0
+                -----------
+        a2----> -------------
+                    x = 0;
+                --------------
+        a3-----> ------------
+                    x = 0;
+                --------------
+
+Instance member variable
+-------------------------------
+    Instance member variables are those which receives the memory inside the each object and there will be as many copies of instance member as number of objects.
+
+    Instance members receives the memory when an object is created.
+
+Static member variable (class variable)
+-----------------------
+    Static member variables are those which receive the memory outside the object and there will be only one copy of static member irrespective of number of objects.
+
+    Static member receive the memory when class is loaded into the memory.
+
+
+Note:
+    The program which is running is called process.
+
+Process space
+-----------------
+    1. Stack => Local varaibles
+    2. Heap => Store the objects (that can be managed dynamically)
+    3. constants 
+    4. Global / Static 
+    5. Code
+
+Instance and static methods
+--------------------------------
+Instance methods
+    - Instance methods are those which can be called through the object.
+    - Instance methods can use instance and static both members directly.
+
+Static methods
+    - Static methods are those which can be called without any object through the class name.
+        Math.pow(2,3);
+    - Static method can't use the instance variable. It can only use static varaible directly.
+
+
+
+Note:
+Method operates on Data and Data can be supplied to the method by two ways...
+
+1. Through the object
+2. Through the parameter
+
+--------------------------------
+1. Through the object
+    class Circle {
+        private int radius;
+
+        public Circle(int radius) {
+            this.radius = radius;
+        }
+
+        public void computeArea() {
+            return Math.PI * this.radius * radius;
+        }
+    }
+
+    Circle c1 = new Circle(10); -> c1(radius = 10)
+        c1.computeArea();
+
+2. Through the parameter
+    ---------------------
+        public int sum(int x, int y) {
+            return x + y;
+        }
+
+        sum(5,6);
+
+Note:
+    If method operates on object's data then it should be instance method 
+    If method operates on paramter's data then it should be static method.
+
+Note:
+    Within the static context `this` variable is not allowed.
+
+Note:
+    Unfortunetly static member can be called through the object also.
+
+Note:
+    Static method can't use the instance variable. It can only use static varaible directly.
+
+    class Utility {
+        private int a,b;
+        public static int sum(int x, int y) {
+            return x + y;
+        }    
+
+        public static int max(int x, int y) {
+            return x > y ? x : y;
+        }
+
+        public static float avg(int x , int y) {
+            return (x + y) / 2.0f;
+        }
+
+        public static void display(int x, int y) {
+            System.out.println(a + " "+ b + " " + x + " " + z);
+        }
+
+        public void show(int x, int y) {
+            System.out.println(a + " "+ b + " " + x + " " + z);
+        }
+    }
+
+    Utility.display(10,15);
+
+    Utility obj = new Utility(); // a = 0, b = 0
+    obj.show(10,20);
+
+Exercise
+-----------
+Create a Java class called Employee to model employee information. Each employee has the following attributes:
+
+employeeId (int)
+firstName (String)
+lastName (String)
+salary (double)
+
+Include the following methods in the Employee class:
+
+- A constructor to initialize the employee's attributes.
+- getFullName(): This instance method should return the full name of the employee (i.e., first name + last name).
+- getAnnualSalary(): This instance method should calculate and return the annual salary by multiplying the monthly salary by 12.
+- raiseSalary(double percentage): This instance method should increase the employee's salary by the specified percentage.
+
+Additionally, create a static attribute and method for the Employee class:
+
+- totalEmployees (int, static): This static attribute should keep track of the total number of employees created.
+- getTotalEmployees(): This static method should return the total number of employees
