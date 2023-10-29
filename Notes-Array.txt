@@ -1,0 +1,131 @@
+Array -> Homogenous collection of data
+---------------
+age1, age2, age3, age4, age5  
+name1, name2, name3, name4, name5
+        0      1     2     3    4  ---> Index    
+     ------------------------------
+age  | 29  |  35  | 42  | 55  | 21
+     ------------------------------
+
+
+age[0] => 29
+age[2] => 42
+
+
+Array is the fixed length collection of data. It stores similar type of elements in continuous memory locations.
+All the array elements shares the common name but each element is uniquely identified by its index or subscript. So array is also known as subscript variable.
+
+
+int x = 5;
+
+    5001        
+    --------------------------------------------
+x   |0000 0000 0000 0000 0000 0000 0000 0101   | 
+    --------------------------------------------
+
+
+        0      1     2     3    4  ---> Index    
+     ------------------------------
+age  | 29  |  35  | 42  | 55  | 21
+     ------------------------------
+     100    104     108   112   116 -> Address    
+
+How data is accessed from array.
+----------------------------------------
+age[3]
+    100 + 3 * 4
+
+    BaseAddress + index * size => Address of index
+-------------------------------------------------------------
+
+Note: In java array is an object with a property called `length` which returns the length of the array.
+
+
+Creating an array
+---------------------------
+    1. Creating reference variable:
+        int arr[];
+        int[] arr; // Recommanded
+        int arr[10]; // Invalid
+
+        int[] a, b; // both are int[]
+        int a[], b; // a is int[] and b is of type int.
+
+    2. Creating array object
+    ---------------------------
+        arr = new int[5];
+
+    3. Both in single step
+    --------------------------
+    int[] arr = new int[5];
+    int[] arr = new int[n]; // n = 10
+
+Initialization of array
+-----------------------------
+    int[] arr = { 10, 20, 30 };
+    int[] arr = new int[] { 10, 20, 30 };
+
+Accessing array elements
+-----------------------------
+    [] (subscript operator) is used to access the array elements.
+
+    System.out.print(arr[0]);
+    System.out.print(arr[1]);
+    System.out.print(arr[2]);
+    System.out.print(arr[3]);
+    System.out.pritn(arr[4]);
+
+    arr[0] + arr[4];
+
+Accessing element using loop
+-------------------------------------
+    for(int i = 0; i < 5; i++) {
+        System.out.print(arr[i]);
+    }
+
+    for(int i = 0; i < arr.length; i++) {
+        System.out.print(arr[i]);
+    }
+
+---------------------------------------
+
+Exercise:
+-------------
+1.    Circular Shift the array elements by one.
+        arr -> {10, 20, 30, 40, 50}
+        arr -> {20, 30, 40, 50, 10}
+
+2. Shuffle the array elements
+
+3. Insert an element in an unsorted array.
+
+    Example: insert item 34 at position 3.
+
+    Before: 12, 4 , 5, 17, 88
+    After: 12, 4, 34, 5, 17, 88
+
+
+    int[] arr = new int[20];
+
+4. print the horizontal histogram for an array.
+    4,6,9,3,5
+
+    ****
+    ******
+    *********
+    ***
+    *****
+
+5. Print the vertical histogram
+    4,6,9,3,5
+
+    * * * * *
+    * * * * *
+    * * * * *
+    * * *   *
+      * *   *
+      * *
+        *
+        *
+        *
+6. Print the reverse vertical histogram (Like: Vertical Line graph)
