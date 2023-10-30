@@ -38,6 +38,23 @@ age[3]
     BaseAddress + index * size => Address of index
 -------------------------------------------------------------
 
+        100         104     108     112     116                         
+        -----------------------------------------
+    arr |   1   |   2   |   3   |   4   |   5   |
+        -----------------------------------------
+            1       2       3       4       5    
+
+            100 + (4 - 1) * 4 => 112
+
+    Address(I) = Base Address + (I - LB) * Size;
+                                
+
+    arr -> 100 (base address)
+    arr[i] = *(arr + i) = *(i + arr) = i[arr]
+    arr[0] = *(arr + 0) = *arr(Base value) => arr (Base Address)
+
+    arr[1] = *(arr + 1)
+
 Note: In java array is an object with a property called `length` which returns the length of the array.
 
 
@@ -129,3 +146,67 @@ Exercise:
         *
         *
 6. Print the reverse vertical histogram (Like: Vertical Line graph)
+-------------------------------------------------------------------
+
+Limitations of Array
+---------------------------
+1. Array size is fixed Or Array is a fixed length collection. so shortage or wastage is possible.
+
+    int[] arr = new int[100];
+
+2. Insertion of deletion needs shifting.
+    10,20,30,40,50
+         |-> -> ->
+    Insert 25 => 10,20,25,30,40,50
+
+    10,20,30,40,50
+             <- <-      
+    Delete 30 => 10,20,40,50
+
+--------------------------------------------
+2-D Array
+--------------------------------------------
+     0   1   2   3    4  5  6
+ 0   70, 98, 88, 77, 66,76, 89 => Class-1
+ 1   87, 76, 56, 54, 90, 89, 98 => Class-2
+ 2   78, 76, 90, 87, 76, 55, 67 => Class -3
+
+2-D Array is the collection of various 1-D Array. Each element in 2-D array have two index - 1. Row index and 2. Col index
+
+arr[1][2] => 56
+
+
+Creating 2-D array
+-------------------------
+    1. Creating reference variable.
+        int[][] arr1, arr2; // Both are 2-D Array (Recommanded)
+        int arr[][], b; // arr is a 2-D array and b is an integer
+        int[] arr[], b; // arr is a 2-d array and b is a 1-D array
+        int arr[3][4]; // Error, size is not allowed with reference variable.
+
+    2. Creating an object
+        --------------------
+            arr = new int[3][4];
+    3. Both in single step
+        --------------------
+            int[][] arr = new int[3][4];
+
+intialization of 2-D array
+-----------------------------
+    int[][] arr = {{1,2,3}, {2,3,4}, {3,4,5}};
+    int[][] arr = new int[][] {{1,2,3}, {2,3,4}, {3,4,5}};
+
+Accessing 2-D Array
+-------------------------
+                  0        1        2    
+                0 1 2
+int[][] arr = {{1,2,3}, {2,3,4}, {3,4,5}};
+
+
+for(int i = 0; i < arr.length; i++) {
+    for(int j =0; j < arr[i].length; j++) {
+        System.out.print(arr[i][j])
+    } 
+    System.out.println();
+}
+
