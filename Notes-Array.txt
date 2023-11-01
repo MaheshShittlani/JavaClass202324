@@ -296,3 +296,43 @@ b = a;
 Note: 
 When we try to assign a reference varaible into another reference variable. It only make a copy of references don't create an object.
 So this kind of copy is know as `Shallow Copy` and resultant both of the reference variable will point the same object.
+
+Exercise
+------------
+Reverse an array
+-----------------------
+    arr = {1, 2, 3, 4, 5}; Before reverse
+    arr = {5, 4, 3, 2, 1}; After Reverse
+
+Method calls
+------------------
+1. Call by value:
+    Whenever we call a method the copy of value  is passed to the method defination and in method execution if copy is change original parameter doesn't affected.
+
+2. Call by reference
+------------------------
+    Whenever we pass a reference variable in a method call, only the reference copy is passed no new object will be creted. so both(method call & method defination) of the reference variable refers to the same object. and any changes in an object will reflect both of the places.
+    This is called call by reference.
+
+Note:
+    In java all the method call with primitive will be used as call by value.
+
+    and all the method call with object will be used as call by Reference.
+
+
+----------------------------------------------
+// Copying array values (deep copy / cloning)
+int[] arr = {1, 2, 3, 4, 5};
+int[] b = new int[arr.length];
+
+for(int i = 0; i < arr.length; i++) {
+    b[i] = a[i];
+}
+
+-------------------------------------
+Exercise: 
+    Fix the swap method and enable it in such a way that actual parameter should be swapped.
+
+foreach loop
+
+varargs
