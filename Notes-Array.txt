@@ -134,7 +134,7 @@ Exercise:
     *****
 
 5. Print the vertical histogram
-    4,6,9,3,5
+    4,6,9,3,5       3,5,8,2,4
 
     * * * * *
     * * * * *
@@ -333,6 +333,81 @@ for(int i = 0; i < arr.length; i++) {
 Exercise: 
     Fix the swap method and enable it in such a way that actual parameter should be swapped.
 
-foreach loop
+foreach / for-in loop
+--------------------
+foreach loop is used to iterate the collection(Are the object which contains multiple items) items.
 
-varargs
+int[] arr = new int[] {1, 3, 5, 7, 9, 11};
+
+for(int item : arr) {
+    System.out.print(item);
+}
+
+
+Note:
+    Foreach loop creates a copy of items. So this loop is generally used to read the collection items can't be used to update the collection items.
+
+
+int[][] arr = {{1,2,3}, {3,4,5}, {4,5,6}}
+
+for(int row : arr) {
+  for(int item : row) {
+    System.out.print(item);
+  }  
+  System.out.println();
+}
+
+varargs (variable length arguments)
+---------------------------------------
+//formal way
+public static int add(int[] numbers) {
+    int sum = 0;
+    for(int i = 0; i < numbers.length; i++) {
+        sum += numbers[i];
+    }
+    return sum;
+}
+
+int[] arr = {1,2,3,4};
+add(arr);
+add(new int[]{1,2,3,4}); // OK
+add(1,2,3,4); // Error - Mismatch parameter
+
+
+// varargs
+public static int add(int ...numbers) {
+    int sum = 0;
+    for(int i = 0; i < numbers.length; i++) {
+        sum += numbers[i];
+    }
+    return sum;
+}
+
+add(1,2,3,4); // Works fine
+add(1,3,4);
+add(8,9,7,1,5);
+add(new int[]{1,2,3});
+add(arr);
+add(); // 0
+
+Important pointers
+----------------------
+1. varargs variable can accept multiple values.
+2. A primite variable are also allowed with varargs
+    add(int x, int ...numbers) {}
+
+    add(1,2,3,4,5); => x = 1; numbers = [2,3,4,5]
+
+3. varargs must be the last parameter in the method definition.
+    add(int ...numbers, int x) {} // Invalid
+    add(1,2,3,4);
+4. In a single method multiple varargs params are not allowed.
+    add(int ...evennumbers, int ...oddnumbers) {}
+5. If we don't pass any parameter to a varargs variable it won't produce any error it will receive an empty array.
+6. Varargs is not limited to the primitive data types it can be used with objects also.
+
+
+int[] arr = new int[4];
+for(int i = 0; i < 10; i++) {
+    System.out.println(arr[i]);
+}
