@@ -1,5 +1,3 @@
-package Switch;
-
 import java.io.Console;
 
 public class PrintWDay {
@@ -8,6 +6,7 @@ public class PrintWDay {
 
         System.out.print("Enter any day, Say(0-6): ");
         int day = Integer.parseInt(con.readLine());
+        
         String dayName = switch(day) {
             case 0 -> "Sunday";
             case 1 -> "Monday";
@@ -16,8 +15,8 @@ public class PrintWDay {
             case 4 -> "Thrusday";
             case 5 -> "Friday";
             case 6 -> "Saturday";
-          
-        }
+            default -> "Invalid input";
+        };
 
         System.out.println(dayName);
     }

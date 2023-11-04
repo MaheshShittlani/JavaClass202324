@@ -329,6 +329,19 @@ for(int i = 0; i < arr.length; i++) {
     b[i] = a[i];
 }
 
+
+        OR
+
+
+System.arraycopy(sourcearray, startIndex, target, targetStart, targetLength)
+
+int[] a = {1,2,3,4,5};
+int[] b = new int[a.length]; {0,0,0,0,0}
+
+System.arraycopy(a, 0, b, 0, a.length) => b => {1,2,3,4,5};
+
+System.arraycopy(a,2, b, 0, 3); => b -> {3,4,5,0,0};
+
 -------------------------------------
 Exercise: 
     Fix the swap method and enable it in such a way that actual parameter should be swapped.
@@ -411,3 +424,29 @@ int[] arr = new int[4];
 for(int i = 0; i < 10; i++) {
     System.out.println(arr[i]);
 }
+
+Command line arguments
+--------------------------------
+1. While executing the program we can supply the additional parameter from the command line are known as command line arguments.
+2. These arguments are received by main method int String[] args.
+
+Exercise
+---------------
+1. Complete the Calculator
+2. Pick a card
+    ----------------------
+        suits = {Spades, Hearts, Diamonds, Clubs}
+        ranks = {"Ace",2,3,4,5,6,7,8,9,10,"Jack","Queen","King}
+
+        Your card is: Spades - 5
+3. Count the characters
+-------------------------------
+1. Generate a character array of size 100 with random alphabets
+    char[] chars = new char[100];
+
+    generateRandomChar()
+
+
+    count the occurrance of each character.
+    a - 5 b - 9 c - 3 d - 0
+
