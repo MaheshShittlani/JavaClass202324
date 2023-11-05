@@ -1,0 +1,112 @@
+Inheritance
+----------------------
+Father              Mother
+-------------------------------
+hairs               hairs
+Face                Fac3    
+Walking Style       Walking Style
+Specking Style      Specking Style
+Eyes                Eyes
+Skin tone           Skin tone
+
+
+    Child
+--------------------
+    Eyes -> Mother
+    Skin Tone -> Father
+    Walking Style -> Father 
+    Speacking Style - Mother
+
+Inheritance is a process to adopt the features from parents, can add new featurs as well as modifiy the existing once.
+
+    OR
+A class adopt the features from its parent class can add the new features and modify the existing features is called inheritance.
+
+    class A {           // Parent class OR Base Class OR Super class
+        int x, y, z;
+    }
+
+    class B extends A { // Chile class OR Derived class OR Sub class
+        int w;
+    }
+--------------------------------------
+    A a1 = new A(); => {x,y,z}
+
+    B b1 = new B(); => {x,y,z,w}
+
+Note:
+    private member are never inherited. Private members are still the part of child class object but they directly can't be access inside the child class. Need to access through the public member of the parent class.
+
+Type of inheritance
+-------------------------------
+1. Single level inhertance
+2. Multi level inheritance 
+3. Multiple inheritance (Not in java)
+4. Multipath Inheritance (Not in java)
+5. Hirarchical Inheritance
+6. Hybrid Inheritance (Not in java)
+
+------------------------
+Type of inheritance in java
+-----------------------------------
+1. Single level inheritance
+2. Multi level inheritance
+3. Hierarchical Inheritance
+
+Method overriding
+---------------------------
+If two method have the same name and same parameter list and one exist in the parent another one exist in the child class then child class method will hide the parent class method.
+
+In this situation, to call the parent class method you need to use the `super` keyword.
+
+    super.member
+    super.method()
+
+Rules for method overriding
+-----------------------------
+1. If two method have the same name and same parameter list but one exist in parent and another one exist in child then their return type must be same. otherwise it would be a compile time error.
+
+2. A method can't be override with more restricted access
+    - public method can be override with public access
+    - protected methods can be override with public and protected access.
+    - default - method can be override with default, protected and public.
+    - private - methods are never inherited so can't override.
+
+Example:
+    class A {
+        private void m1(int x) {
+
+        }
+    }
+
+    class B extends A {
+        public int m1(int x) {
+
+        }
+    }
+Note: No Error in above example as private methods are never inherited.
+-----------------------------------
+Member Accessiblity / Access specifier
+-----------------------------------
+public  - Can be accessed everywhere - Inside and outside the class
+private - Only accessed within the class in which it belogs.
+protected - Accessed in self class and in child class along with siblings (Classes that belongs to the same package.)
+default - Accessed within the package but can't be accessed outside the package.
+
+Accessiblity order
+---------------------
+1. public
+2. protected
+3. default
+4. private
+
+Constructor in inheritance
+------------------------------
+1. Child class constructor automatically calls the parent class default constructor.
+2. To call any other constructor explicitly use the super() method with specified parameter.
+3. You can call only the existing constructor from the parent class.
+4. super() method call must be written in the first line of child class constructor. as intialization should be performed from parent to child.
+
+Inheritance memory map
+-----------------------------------
+             
