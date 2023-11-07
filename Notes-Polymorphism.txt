@@ -1,0 +1,17 @@
+Polymorphism
+---------------------
+poly -> One(single)
+morph -> Many forms
+--------------------------------
+If same object have multiple forms, then that is called polymorphic object and this behavior is called polymorphism.
+
+Choclate c = new DairyMilk();
+Choclate c = new Kitkat();
+Choclate c = new SweetChoclate();
+-----------------------------------------
+
+Car c = new Baleno();
+Car c = new Polo();
+car c = new TataNaxon();
+
+----------------------------------
