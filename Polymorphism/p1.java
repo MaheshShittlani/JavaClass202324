@@ -72,7 +72,7 @@ class Jungle {
             System.out.println("H.No. "+ i);
             System.out.println("I am a " + animals[i].getClass().getName());
             animals[i].makeSound();
-            animals[i].run();
+            // animals[i].run(); Error
             System.out.println("---------------------------------");
         }
     }
