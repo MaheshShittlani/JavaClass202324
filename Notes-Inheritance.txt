@@ -237,3 +237,37 @@ d1 = new A(); // Wrong
 d1 = new B(); // Wrong
 d1 = new C(); // Wrong
 d1 = new D(); // OK
+
+--------------------------------------
+final keyword
+---------------------------------------
+
+final variable -> Can't Change
+-------------------------------
+    final double PI = 3.14752;
+
+final method -> Can't Override
+-----------------------------------
+
+class A {
+    final public void m1() {
+
+    }
+}
+
+class B extends A {
+    public void m1() { // Compile time error
+
+    }
+}
+
+final class -> Can't Extends
+---------------------------------------
+
+final class X {
+
+}
+
+class Y extends X { // Compile time error
+
+}

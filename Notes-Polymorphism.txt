@@ -15,3 +15,37 @@ Car c = new Polo();
 car c = new TataNaxon();
 
 ----------------------------------
+
+
+Abstract class
+---------------------
+Abstract class is the collection of abstract and concrete methods.
+
+ - Abstract methods - are those which don't have any implementation.
+ - Concrete methods - are those which have its implementation.
+
+- If a method don't have its implementation then the method must be declared as an abstrat.
+- If a class have any one abstract method then it must be declared as an abstract class.
+- The object of abstract is not possible only reference of abstract class is possible.
+- If a class extends an abstract class then child class either - must override all the abstract methods OR must declare itself as an abstract class. Otherwise it would be a compile time error.
+
+Important pointer while working with abstract class and methods
+---------------------------------------------------------------
+- A private method can't be abstract.
+- A final method can't be abstract.
+- A constractor can't be abstract.
+
+Exercise
+----------------
+Employee (id, name, age, salary)
+    - Monthly Paid
+        - basic salary (10000)
+        - hra (6%)
+        - da (8%)
+        - ta (12%)
+        - pf (8%)
+        - Total Salary -> basic + hra+ da+ ta - pf
+    - Hourly Paid
+        - hours worked
+        - rate / hour
+        - total salary -> hours_worked * rate_per_hour
