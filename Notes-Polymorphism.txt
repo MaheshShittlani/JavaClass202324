@@ -49,3 +49,220 @@ Employee (id, name, age, salary)
         - hours worked
         - rate / hour
         - total salary -> hours_worked * rate_per_hour
+
+Interface
+----------------
+Interface is the collection of `final` variables and absract methods.
+
+interface Animal {
+    int NO_OF_LEGS = 4;
+    void eat();
+    void speak();
+    void run();
+}
+
+class Cat implements Animal {
+    public void eat() {
+
+    }
+    public void speak() {
+
+    }
+
+    public void run() {
+
+    }
+}
+
+Interface is like a contract for a class and if a class implements and interface then class gurantees that all the interface methods are implemented inside the class.
+
+Important Pointers
+----------------------
+1. All the variables of interface are public static and final by default.
+2. All the methods of inteface are public and abstract by default. 
+3. interface methods can't be private.
+4. interface methods can't be final.
+
+```Note:```
+Multiple interitance with classes are not allowed in java but mutliple inheritance with interface is allowed in java.
+
+class A {
+    
+}
+
+class B {
+
+}
+
+class C extends A, B { // Not allowed
+
+}
+----------------------------------
+
+class A {
+
+}
+
+interface X {
+
+}
+
+class B extends A implementation X { // allowed
+
+}
+--------------------------------------
+
+interface X {
+    
+}
+interface Y {
+
+}
+class A implementation X, Y {
+
+}
+
+---------------------------------------------
+
+class B extends A implements X, Y {
+
+}
+
+-----------------------------------------------
+class C extends A,B  implementation X { // Not allowed.
+
+}
+---------------------------------------------------
+
+
+``Note``
+- A class extends another class.
+    class B extends A {
+
+    }
+
+- An interface extends another interface.
+    interface X {
+        void m1();
+        void m2();
+    }
+
+    interface Y extends X {
+        void m3();
+        void m4();
+    }
+
+    class A implements Y {
+        //Override 4 methods m1,m2,m3,m4.
+        
+    }
+
+- A class implements and interface.
+    class A implements X {
+
+    }
+
+---------------------------------------
+
+A class must override all the interface methods, if any one interface method remains undefined inside the class, then either the class should be declared as absract class or it would be a compile time error.
+
+interface X {
+    void m1();
+    void m2();
+    void m3();
+}
+
+abstract class A implements X {
+    public void m1() {
+
+    }
+
+    public void m2() {
+
+    }
+}
+---------------------------------------------
+
+interface methods must override with public access as while overriding the method a method can't be overridden with more restricted access.
+
+------------------------------------------------
+interface X {
+    void m1();
+    void m2();
+}
+
+interface Y {
+    void m2();
+    void m3();
+}
+
+class A implements X,Y {
+    // Override 3 methods
+}
+
+If a class implement two or more super interfaces and both of the interfaces have the common method then the class must override the common method only once.
+
+------------------------------------------
+
+interface X {
+    void m1();
+    void m2();
+}
+
+interface Y {
+    int m2();
+    void m3();
+}
+
+class A implements X, Y {
+    // Error
+}
+
+
+If a class implements two or more super interface and both of the interface have the common mehtod (method name and parameter are same) then their return type must be same otherwise it would be a compile time error.
+
+-----------------------------------------------------
+interface comparable {
+    boolean equals(Object);
+}
+class Person implments comparable {
+    private String name;
+    private int age;
+    private String aadhar;
+
+    public boolean equals(Person p) {
+        return this.age == p.age;
+    }
+}
+class Employee extends Person implements Comparable {
+    private int empId;
+    private String designation;
+    private String dept;
+    private int salary;
+
+    public void equals(Employee e) {
+        return this.designation == e.designation && this.salary == e.salary;
+    }
+}
+
+class Car {
+    public void equals() {
+
+    }
+}
+
+
+
+int a = 5, b = 10;
+
+a == b;
+
+Employee e1 = new Employee(---);
+Employee e2 = new Empoyee(---);
+
+---------------------------------------
+Vehicle, Car, Airoplane, Helicoptor, Bus, Truck
+
+Interface=>Vehicle- start,stop
+Abstract class => AbstarctVehicle to implement the methods of interface
+Inheritance=> Car Aeroplane Helicopter which will extend the abstract class and implement and override different methods according to functionality
