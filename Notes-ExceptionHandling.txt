@@ -1,0 +1,62 @@
+What is the exception?
+-----------------------------
+
+Exception is an abnormal situation in your program that can't be handled by your program and cause some issue.
+
+Exception are generally occurred at run time and also known as "Run time errors"
+
+So Whenever exception occurrec in our program, it goes to the JVM and JVM stop the program from the point where the exception is occurred.
+
+
+In java exception is an object and whenever an exception is occurred in your program then JVM creates an object of perticular type of Exception and throw it.
+
+If you program have the handler(catch) defined for that type of Exception, then the handler will executes and rest of the program will be running as usual. otherwise the exception will be sent to the JVM and JVM terminate the program from the point where the exception is occurred.
+
+
+Why Exception Handling?
+-------------------------------
+Because if there is a concern in one section of your program then another section shouldn't be affected.
+
+Exception handling can be done by using 5 keywords in java.
+
+1. try
+2. catch
+3. throw
+4. throws
+5. finally
+
+try -> It is a block of statements that can be error prone and all those statement that are dependent on error prone statements.
+
+catch -> If is a block which handle the perticular type of exception. So it is called exception handler.
+
+finally -> It is a block of statement that will always executes even the exception occurred or not.
+
+methods of writing try catch block
+-----------------------------------------
+Note
+---------
+    1. Each try block is followed  by one or more catch block.
+
+    try {
+
+    } catch(ExceptionType-1) {
+
+    } catch(ExceptionType-2) {
+
+    }
+
+    2. A try block can be followed by either a catch block or finally block.
+
+        try {
+
+        } catch(---) {
+
+        }
+        ********************
+
+        try {
+
+        } finally {
+
+        }
+
