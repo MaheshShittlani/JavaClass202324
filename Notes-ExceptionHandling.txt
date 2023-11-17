@@ -59,4 +59,221 @@ Note
         } finally {
 
         }
+Types of Exception
+---------------------------
+1. Compile time exception / Checked Exception - are those which must be handled in your program otherwise compile produce an error.
+    - FileNotFoundException
+    - IOException
+    - SQLException
 
+2. Run time exception / Unchecked Exception - 
+    - ArrayIndexOutOfBoundsException
+    - StringIndexOutOfBoundsException
+    - NumberFormatException
+    - ArithmeticException
+    - NullPointerException
+        Person p1 = null;
+            p1.per();
+
+3. JVM Errors - are those which can't be handled by us only can be handled by JVM.
+    - MemoryOverflowException
+    
+
+----------------------------------------------
+In Java exception is an object of Exception class or any Child class.
+
+Exception class Hierarchy
+----------------------------
+    java.lang.throwable
+        - java.lang.Exception
+            - ArrayIndexOutOfBoundsException
+            - NullPointerException
+            - StringIndexOutOfBoundsException
+            - IOException
+                - FileNotFoundException
+            - SQLException
+        - java.lang.Error (JVM Error)
+
+Rules of writing catch
+-----------------------------
+    Rules#1
+    -------------
+        try {
+
+        } catch(ExceptionType-1) {
+
+        } catch(ExceptionType-2) {
+
+        }
+
+    Rule#2
+    ------------
+        try {
+
+        } catch(ExceptionType-1) {
+
+        } catch(ExceptionType-2) {
+
+        } finally {
+
+        }
+
+    Rule#3 
+    ---------------
+        try {
+
+        } finally {
+
+        }
+
+    Rule#4
+    ---------------
+        try {
+            -----------
+            try {
+
+            } catch(ExceptionType-1) {
+
+            } catch(ExceptionType-2) {
+
+            }
+        } catch(ExceptionType-3) {
+
+        }
+Note:
+    Inner try block exception will be matched by inner catch blocks and if no match found then it will be matched with out catch block.
+
+    Rule#5
+    ---------------
+        while(----) {
+            try {
+
+            } catch(-------) {
+
+            }
+        }
+
+    Rule#6
+    ------------
+    Child class exception must be handled before the parent class exception.
+
+        AException
+            |
+        BException
+            |
+        CException
+
+        Wrong Example
+        ------------------
+        try {
+
+        } catch(AException) {
+
+        } catch(BException) {
+
+        } catch(CException) {
+
+        }
+
+
+
+        Right Example
+        ---------------
+        try {
+
+        } catch(CException e) {
+
+        } catch(BException e) {
+
+        } catch(AException e) {
+
+        }
+
+    try {
+
+    } catch(ArrayIndexOutOfBoundsException) {
+
+    } catch(ArithmeticException) {
+
+    } catch(Exception) {
+
+    } 
+
+
+    try {
+
+    } catch(FileNotFoundException) {
+
+    } catch(IOException) {
+
+    } catch(Exception) {
+
+    }
+
+    Rule#7 (Multi Exception Catch Block - Java7)
+    ----------
+    try {
+
+    } catch(FileNotFoundException | IOException | Exception e) {
+
+    }
+
+----------------------------------------------------
+Methods of Throwable class
+----------------------------------------
+class Throwable {
+    private String msg;
+    private int lineNumber;
+
+    public Throwable() {
+        
+    }
+
+    public Throwable(String msg) {
+        this.msg = msg;
+    }
+
+    public String getMessage() {
+        return msg;
+    }
+}
+
+
+1. public String toString()
+-------------------------------
+    className:message
+
+    try {
+        int result = a / b;
+    } catch(ArithmeticException e) {
+        System.out.println(e.toString()); // ArithmeticException: / by zero
+    } 
+
+2. public String getMessage() : It returns the message associated with the excepiton object.
+    ---------------------------
+        try {
+            int result = a / b;
+        } catch(ArithmeticException e) {
+            System.out.println(e.getMessage()); // / by Zero
+        }
+
+3. void pringStackTrace()
+    -----------------------------
+        e.pringStackTrace();
+        e.printStackTrace(PrintStream)
+        e.printStackTrace(PrintWriter)
+
+User Definded Exception
+-------------------------
+    1. Create a class which extends Exception class
+    2. Create the necessary constructors and connect the params with parent constructor
+
+Chained Exception (JAVA - 5)
+---------------------------
+    Throwable(Throwable causeException)
+    Throwable(String msg, Throwable causeException)
+
+methods
+----------
+    void initCause(Throwable causeException)
+    Throwable getCause()

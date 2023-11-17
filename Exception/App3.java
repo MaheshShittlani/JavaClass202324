@@ -12,11 +12,11 @@ public class App3 {
 
             System.out.println("Result = " +  result);
         } catch(ArrayIndexOutOfBoundsException e) {
-            System.out.println("Invalid index ");
+            System.out.println(e);
         } catch(NumberFormatException e) {
-            System.out.println("Invalid number");
+            e.printStackTrace();
         } catch (ArithmeticException e) {
-            System.out.println("Invalid expersssion ");
+            System.out.println(e.getMessage());
         }
         
     }
