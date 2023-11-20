@@ -1,0 +1,61 @@
+java.lang.Object
+------------------------
+Object class is the parent class of every class in java even the class is predefined or it is user defined.
+
+So all the classes inherits all public and protected methods of object class.
+
+class A {
+    
+}
+
+public methods
+--------------------
+Class getClass()
+String toString()
+int hashCode()
+boolean equals(Object)
+
+
+void notify();
+void notifyAll();
+void wait()
+void wait(long ms)
+void wait(long ms, int ns)
+
+protected methods
+---------------------
+protected void finalize();
+protected void clone();
+
+Class getClass():
+------------------------
+This method is used to achieve the object of Class class from any object and Class class is used to fetch the metadata about any object/class.
+    Meta Data
+    ---------------
+        class Name
+        Methods
+        Constructors
+        Modifiers
+
+class A {
+
+}
+
+main() {
+    A a1 = new A();
+    Class clazz = a1.getClass();            // a1.getClass().getName()
+    System.out.println(clazz.getName());
+}
+
+------------------------------------------
+
+String toString():
+-----------------------
+This method is used to provide the string representation of any object.
+
+The default String representation of any object is `className@hashcode`
+
+
+Most of the predefined class already override the toString() method to provide the meaningful string representation of their object.
+
+If you want to get meaningful string representation for your classes then you have to override toString() method for your classes.

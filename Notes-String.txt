@@ -190,13 +190,15 @@ Conversion
 	String num = "42";
 		int x = Integer.parseInt(num);// 42
 		
-	Others to String
+	Primitive to String
 	------------------
 	int x = 42;
 	
 	1. String s1 = " + 24";
-	System.out.println(42 + s1); // 24 + 42
+	System.out.println(42 + s1); // 42 + 24
 	System.out.println(42 + " + 24");
+
+	System.out.println("Total = " (3 + 4));
 	
 	2. String.valueOf(x); // "42"
 	
@@ -227,4 +229,14 @@ Array to string conversion
 		String s1 = String.copyValueOf(arr,5,3); // JIL
 
 
+Exercise Question
+------------------
+Hello    how    are   you?
+
+Word count-> ?
+
+Exercise
+----------------
+Mr.   Mohan    Kumar     Sharma
+Mr. M.K. Sharama
 	
