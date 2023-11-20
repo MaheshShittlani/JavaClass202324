@@ -59,3 +59,17 @@ The default String representation of any object is `className@hashcode`
 Most of the predefined class already override the toString() method to provide the meaningful string representation of their object.
 
 If you want to get meaningful string representation for your classes then you have to override toString() method for your classes.
+
+int hashCode()
+---------------------
+In java, every object has a unique code associated with it and hashCode() method is used to retrive that code.
+
+boolean equals(Object)
+------------------------
+This method is used to perform the deep comparision. If matches the content of the object and compare the object.
+
+By default all the predefined class overrides the equals method so it performs the deep comparision.
+
+For user defined class untill we don't override the equals method it works similar as ==(Equality operator) and performs the shallow comparasion.
+
+To perform the deep comparasion we must override the equals() method in our classes.
