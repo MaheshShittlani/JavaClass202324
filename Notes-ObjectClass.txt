@@ -15,7 +15,7 @@ String toString()
 int hashCode()
 boolean equals(Object)
 
-
+//Methods used in threading
 void notify();
 void notifyAll();
 void wait()
@@ -25,7 +25,7 @@ void wait(long ms, int ns)
 protected methods
 ---------------------
 protected void finalize();
-protected void clone();
+protected void clone(); // Deep cloning
 
 Class getClass():
 ------------------------
@@ -73,3 +73,40 @@ By default all the predefined class overrides the equals method so it performs t
 For user defined class untill we don't override the equals method it works similar as ==(Equality operator) and performs the shallow comparasion.
 
 To perform the deep comparasion we must override the equals() method in our classes.
+
+protected void finalize()
+------------------------------
+
+This methods executes just before the object is going to be destroyed from the memory by the `GC` (Garbage collector).
+
+Garbage Collector
+-----------------------
+It is a low level thread which collects all the unused object from the memory.
+
+Unused object / Object eligible garbarge collection
+-------------------------------------------------------
+The object that are not referred by any reference variable are eligible for garbarge collection.
+
+
+
+Person p1 = new Person();
+Person p2 = p1;
+Person p3 = new Person();
+
+Note:
+We can request the JVM to run the garbage collector by using two methods.
+
+System.gc()
+Runtime.gc()
+
+protected void clone()
+------------------------
+This method is used to make a clone of an object.
+
+Rules for clonning
+-----------------------
+1. The class must implement Clonable interface. Clonable is a marker interface.
+
+2. Override the clone method with public access.
+Note: 
+Marker interface is an interface with no methods it is just used to mark a class for a perticular functionality.

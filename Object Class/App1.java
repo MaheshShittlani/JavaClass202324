@@ -33,12 +33,20 @@ class Person {
 
     @Override
     public boolean equals(Object obj) {
+        if(this == obj) {
+            return true;
+        }
         if(obj instanceof Person) {
             Person p = (Person)obj;
             return this.age == p.age && this.name.equals(p.name);
         }
 
         return false;
+    }
+
+    @Override
+    public void finalize() {
+        System.out.println("Object Terminated");
     }
 }
 
@@ -67,5 +75,12 @@ class App1 {
         System.out.println(list);
 
         System.out.println(p1.hashCode());
+
+
+        p1 = null;
+        p2 = null;
+
+        System.gc();
+
     }    
 }
