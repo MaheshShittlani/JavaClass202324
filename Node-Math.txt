@@ -1,0 +1,58 @@
+java.lang.Math class in JAVA - final class
+--------------------------
+This class provides a set of static methods to perform a wide variety of Math operations.
+
+Constants
+-----------------
+public static final PI; => Math.PI;
+public static final E;
+
+
+Basic Arithmetic operations
+----------------------
+    1. int addExact(int x, int y):
+        long addExact(long x, long y): 
+        Adds two numbers and throws an exception if the operation overflow the data type.
+    2. subtractExact(int x, int y):
+        subtractExact(long x, long y):
+    3. multiplyExact(int x, int y):
+        multiplyExact(long x, long y):
+    4. incrementExact(int a):
+        incrementExact(long a):
+    5. decrementExact(int a) 
+        decrementExact(long a)
+
+Trignomatry Operations
+--------------------------
+    double sin(double radians)
+    double cos(double radians)
+    double tan(double radians)
+    double asin(double radians)
+    double acos(double radians)
+    double atan(double radians)
+    
+    double toRadians(double degree)
+    double toDegrees(double radians)
+
+Rounding and Exponent operations
+---------------------------------
+    1. int round(float)
+        long round(double)
+    2. double ceil(double)
+    3. double floor(double)
+    4. double exp(double)
+    6. double power(double a, double b)
+    7. double rint(double a)
+        0.5 -> then returns the nearest even number
+        >0.5 -> Math.ceil()
+        <0.5 -> Math.floor()
+
+Squarting and absolute operations
+---------------------------------
+    1. double sqrt(double)
+    2. double cbrt(double)
+    3. int abs(int a)
+
+Random numbers
+---------------------------------
+    1. double random() -> Value between 0.0 to 1.0
