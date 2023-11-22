@@ -1,6 +1,7 @@
 java.util.Arrays
 ------------------------------
 void sort(primitiveType[] array) : quick sort
+void sort(primitiveType[] array, int startIndex, int endIndex)
 void sort(Object[] array): quicksort
 void parallelSort(primitiveType[] array): Merge sort (parallel sorting algorithm)
 
