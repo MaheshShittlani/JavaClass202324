@@ -1,0 +1,136 @@
+Wrapper class in java
+-----------------------------
+
+Primitive type                      Wrapper classes (java.lang)
+----------------------------------------------------------
+byte                                Byte
+short                               Short
+int                                 Integer
+long                                Long 
+float                               Float
+double                              Double
+char                                Character
+boolean                             Boolean
+
+
+Constants (Byte, Short, Integer, Long, Character, Float, Double)
+---------------------- 
+MIN_VALUE
+MAX_VALUE
+SIZE
+BYTES
+TYPE
+    ----------------------------
+    Example:
+        System.out.println(Byte.MIN_VALUE + " - " + Byte.MAX_VALUE);
+        System.out.println(Byte.SIZE); OR Sysetm.out.println(Byte.BYTES);
+        System.out.println(Byte.TYPE);
+
+Constants for Boolean
+------------------------
+    TRUE => Boolean.TRUE   OR true
+    FALSE => Boolean.FALSE OR false
+
+Constants for Real Data types
+-----------------------------------
+MAX_EXPONENT
+MIN_EXPONENT
+NAN
+POSITIVE_INFINITY
+NEGATIVE_INFINITY
+
+Constant ONLY for Boolean type
+------------------------------
+FALSE
+TRUE
+
+java.lang.Number class 
+-------------------------
+Number(A)
+    - Byte
+    - Short
+    - Integer
+    - Long
+    - Float
+    - Double
+
+Number class methods
+------------------------
+    byte byteValue()
+    short shortValue()
+    int intValue() [A]
+    long longValue() [A]
+    float floatValue() [A]
+    double doubleValue() [A]
+
+
+Creating wrapper Object
+--------------------------------
+Byte b = new Byte(42);
+Integer i = new Integer(45);
+
+
+Creating String class Wrapper Object
+-------------------------------------------
+Byte b = new Byte("42");  NumberFormatException
+Integer i = new Integer("42");
+
+
+Fetching primitive values from wrpper object
+---------------------------------------------
+Double d = new Double(128.44f);
+byte b = d.byteValue(); // -128
+short s = d.shortValue(); // 128
+int i = d.intValue(); // 128
+
+Converting wrapper Object intto String
+----------------------------------------
+String str = b.toString();
+String str = i.toString();
+
+Converting primitive into String
+----------------------------------------
+String str = Byte.toString(42);
+String str = Integer.toString(33);
+
+Converting string into primitive
+------------------------------------
+int i = Integer.parseInt("245");
+byte b = Byte.parseByte("22");
+float f = Float.parseFloat("22.33");
+
+Converting String into Wrapper object
+-------------------------------------------
+Integer iobj = Integer.valueOf("234");
+Byte bobj = Byte.valueOf("123");
+Byte bobj = Byte.valueOf("A2",16);
+
+Only Integer class methods
+------------------------
+
+Integer.toString("3214");
+
+Integer.toBinaryString(3214); OR Integer.toString(3214,2);
+Integer.toOctalString(3214); OR Integer.toString(3214,8);
+Integer.toHexString(3214); OR Integer.toString(3214,16);
+
+
+Integer.parseInt("1101101",2);
+Integer.parseInt("2345",8);
+
+Character class methods
+----------------------------
+boolean isLetter(Char)
+boolean isDigit(Char);
+boolean isUpperCase(Char)
+boolean isLowerCase(Char)
+boolean isWhiteSpace(Char)
+boolean isLetterOrDigit(Char)
+char toUpperCase(Char)
+char toLowerCase(Char)
+int getNumericValue(Char)
+
+
+
+
+
