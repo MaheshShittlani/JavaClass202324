@@ -99,6 +99,14 @@ int i = Integer.parseInt("245");
 byte b = Byte.parseByte("22");
 float f = Float.parseFloat("22.33");
 
+Comparision
+------------------
+equals()
+compareTo()
+
+iobj1.equals(iobj2);
+iobj1.compareTo(iobj2);
+
 Converting String into Wrapper object
 -------------------------------------------
 Integer iobj = Integer.valueOf("234");
@@ -118,6 +126,7 @@ Integer.toHexString(3214); OR Integer.toString(3214,16);
 Integer.parseInt("1101101",2);
 Integer.parseInt("2345",8);
 
+
 Character class methods
 ----------------------------
 boolean isLetter(Char)
@@ -130,6 +139,53 @@ char toUpperCase(Char)
 char toLowerCase(Char)
 int getNumericValue(Char)
 
+Auto boxing and Auto unboxing
+---------------------------------
+1.
+Integer iobj = new Integer(42);
+
+    OR
+Integer iobj = 42;
+
+2. void fun(Integer iobj) {
+
+}
+
+    fun(new Integer(22));
+        OR
+    fun(22); // Auto boxing
+
+3. Integer foo() {
+        int x = 42;
+        return x;
+    }
+
+// Auto unboxing
+1.
+int a = iobj.intValue();
+
+    OR
+int a = iobj; // unboxing
+
+2. Integer iobj = 42; // boxing
+
+    int i = iobj + 22; // unboxing
+
+3. Integer iobj = 42;
+    iobj = iobj + 22; // unboxing and boxing
+
+        OR
+    iobj = Integer.valueOf(iobj.intValue() + 22);
+
+Important pointers
+-----------------------
+1. Wrap the primitive into objects
+2. Conversion
+    - Primitive to wrapper object // Boxing
+    - Wrapper object to primitive // Unboxing
+    - String to Wrapper object (valueOf)
+    - String to primitive (parseXXX)
+    - Data type utility methods
 
 
 
