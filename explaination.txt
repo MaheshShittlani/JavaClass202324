@@ -1,0 +1,22 @@
+00000101 01010010 => Byte Stream => Program (01010010)
+                                            00000101
+
+00000101 01010010 => Byte Stream => Character Stream =>  Program ()
+                     01010010 01010010 => Y => Y 
+
+
+00000000 00000000 00000000  00100110    
+
+Path
+----------
+Absolute path
+-----------------
+    c:\documents\textfiles\a.txt
+Relative path
+------------------
+    project
+        -textfiles
+            --a.txt
+        -x.java(textfiles/a.txt)
+        -io
+            --fileread1.java(../textfiles/a.txt)

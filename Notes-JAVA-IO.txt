@@ -1,0 +1,122 @@
+Input / Output in java (java.io.*)
+--------------------------------------
+	In java input/ output is performed through streams
+
+What is stream
+------------------
+	Source or Destination from where data is flowing.
+		Input Stream: Reading data from
+		Output Stream: Writing data to
+Types of Streams
+-------------------
+	1. Byte Stream
+		Read and Write data 1 byte at a time. It is used to deal with
+		binary data as it is saved in memory.
+		No conversion is happening while reading and writing data from
+		stream to memory.
+	2. Character Stream
+		It is used to read / Write data in character format, 1 character at a time but in background data is stored in binary so character stream is connected with binary stream to read / write binary data and convert them into character.
+		So here the conversion from binary to character and character to binary is happening in background.
+    
+        Mostly used in read world.
+
+Byte Stream class hierarchy
+----------------------------------
+- InputStream(A)
+    -FileInputStream(C)
+	-BufferedInputStream(C)
+	-FileInputStream(A)
+		-DataInputStream(C)
+-OutputStream(A)
+    -FileOutputStream(C)
+	-BufferedOutputStream(C)
+	-FilterOutputStream(A)
+		-DataOutputStream(C)
+
+----------------------------------------
+java.io.InputStream(A) Methods
+	- int read(): Read one byte and return int version, return -1 for EOF. throws IOException
+	- int read(byte[] b): Read one byte and put it into array `b` and 
+						program reads data from array, Return how many 
+						bytes are successfully read.
+	- int read(byte[], int off, int len)
+	- void close() throws IOException
+	- long skip(long n)
+    - int available()
+    - void mark()
+    - void reset()
+    - boolean markSupported()
+
+java.io.OutputStream(A) Methods
+	- int write()
+	- int write(byte[])
+	- int write(byte[], int off, int len)
+	- void close()
+	- void flush()
+---------------------------------
+
+FileInputStream
+    - Used to read the data from a file.
+
+FileInputStream
+----------------------
+	-FileInputStream(String filename) throws FileNotFoundException
+	-FileInputStream(File file) throws FileNotFoundException
+	
+FileOutputStream : Used to write the data into a file.
+-----------------------
+	- FileOutputStream(String filename)
+	- FileOutputStream(File file)
+	- FileOutputStream(String filename, boolean append)
+	- FileOutputStream(File file, boolean append)
+	
+Exercise
+----------
+	FileInputStream(a.txt) -> fis ------------- fos -> FileOutputStream(b.txt)
+
+a.txt -> (fis)---> bis -----> Program -> bos -> fos -> b.txt
+
+
+Exercise
+-------------------
+Read a file and count the following things...
+	1. Total Characters
+	2. Total digits
+	3. Total Alphabets
+	4. Total Spaces
+
+Copy a file such that Reverse the file content.
+
+DataInputStream/ DataOutputStream: is used to read/write the in the primitive format. 
+
+DataOutputStream creates a file in binary format which can be retrived only with DataInputStream.
+
+While reading a file it throws `EOFException` when cursor reach to the End of the File.
+ 
+DataInput(I) provide the specification to read the data in primitive format. It defined all the methods to read primitive data.
+	-readXXX()
+
+DataInputStream implements DataInput
+	- readByte()
+	- readShort()
+	- readInt()
+	- readLong()
+	- readFloat()
+	- readDouble()
+	- readBoolean()
+	- readLine()
+
+DataOutput: provides the specification to write the data in primitive format.
+	- writeXXX()
+DataOutputStream implements DataOutput
+	- writeByte()
+	- writeShort()
+	- writeInt()
+	- writeLong()
+	- writeFloat()
+	- writeDouble()
+	- writeBoolean()
+
+Generate 100 random integer numbers and write into a file named numbers.dat.
+
+Read numbers.dat and seperate the even and odd number. write the even numbers in even.dat and odd numbers in odd.dat
