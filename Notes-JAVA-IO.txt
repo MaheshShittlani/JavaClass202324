@@ -25,13 +25,40 @@ Byte Stream class hierarchy
 - InputStream(A)
     -FileInputStream(C)
 	-BufferedInputStream(C)
-	-FileInputStream(A)
+	-FilterInputStream(A)
 		-DataInputStream(C)
+		-SequenceInputStream(C)
+		-ByteArrayInputStream(C)
+		-LineNumberInputStream(C)
+		-ObjectInputStrweam(C)
 -OutputStream(A)
     -FileOutputStream(C)
 	-BufferedOutputStream(C)
 	-FilterOutputStream(A)
 		-DataOutputStream(C)
+		-ByteArrayOutputStream(C)
+		-ObjectOutputStream(C)
+	-PrintStream (Universal Stream)
+		- print()
+		- println()
+
+Character Stream class hierarchy
+------------------------------------
+Reader(A)
+	- FileReader
+	- FilterReader
+		- CharArrayReader
+		- StringReader
+		- BufferedReader
+Writer(A)
+	- FileWriter
+	- FilterWriter
+		- CharArrayWriter
+		- StringWriter
+		- BufferedWriter
+	- PrintWriter (Universal Stream)
+		- print()
+		- println()
 
 ----------------------------------------
 java.io.InputStream(A) Methods
@@ -120,3 +147,89 @@ DataOutputStream implements DataOutput
 Generate 100 random integer numbers and write into a file named numbers.dat.
 
 Read numbers.dat and seperate the even and odd number. write the even numbers in even.dat and odd numbers in odd.dat
+
+
+SequenceInputStream: Used to read the data sequenctially from multiple data sources.
+
+Serialization / Deserialization
+--------------------------------
+
+Serialization: is a process in which an object is stored in a file.
+
+Deserialization: is a reverse process of Serialization in which object is restored from a file.
+
+
+A class must implements Serializable interface if we want to store the object of that class.
+Serializable is a marker interface and have no method which need to implmented by child class.
+
+class Person implements Serializable {
+
+}
+
+To write an object into a file we use ObjectOutpuStream and the method writeObject(object) is used to write the object.
+
+Similarly to read the object we use readObject() method of ObjectInputStream
+
+PrintStream
+-----------------
+	PrintStream(OutputStream out)
+	PrintStream(OutputStream out, boolean autoFlush)
+
+PrintWriter
+----------------
+	PrintWriter(Writer out)
+	PrintWriter(Writer out, boolean autoFlush)
+
+InputSteamReader
+---------------------
+It is the bridge between byte stream and character stream. and convert the byte stream into character stream.
+
+BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+int a = Integer.parseInt(br.readLine());
+
+---------------------------------------
+java.io.File
+-----------------------------
+It represent a path of a file or Directory(folder) on a system in the platform independent manner.
+
+This class allows you to fetch the information about a path or file using file class object. Means this class gives you the facility to fetch the metadata about a file or directory path.
+
+	File(String path)
+	File(String directory, String filename)
+	File(File directory, String filename)
+
+Example:
+	File f = new File("d:/textfiles");
+	File f1 = new File("d:/textfiles", "a.txt");
+	File f2 = new File(f, "a.txt");
+
+Methods
+-------------
+	String getName()
+	String getParent()
+	String getPath()
+	String getAbsolutePath()
+	String getCanonicalPath()
+
+	File getAbsoluteFile();
+	File getCanonicalFile();
+
+
+	f.isDirectory()
+	f.isFile()
+	f.exists()
+	f.createNewFile() throws IOException
+	f.isHidden()
+	f.canRead()
+	f.canWrite()
+	f.lastModified():long timestamp
+	f.setReadable(boolean)
+	f.setWriteable(boolean)
+	f.renameTo(File): rename & move
+
+	String[] f.list()
+	Files[] f.listFiles()
+	String[] f.list(java.io.FilenameFilter)
+	File[] f.listFiles(java.io.FilenameFilter);
+
