@@ -53,4 +53,261 @@ All the methods of legacy classes are thread safe(synchronized).
 
 Collection Interface
 -----------------------
+1. int size()
+2. boolean isEmpty()
+3. void clear()
 
+Addition
+--------------
+    boolean add(E element)
+
+Remove
+------------------------
+    boolean remove(Object)
+
+
+Existance check
+----------------------
+    boolean contains(E Element)
+
+Set Operation
+-------------------------
+    addAll(Collection) ->   A.addAll(B) -> A Union B
+    removeAll(Collection) -> A.removeAll(B) ->   A - B
+    retainAll(Collection) -> A.retainAll(B) -> A intersection B
+    containsAll(Collection) -> A.containsAll(B) -> A subset B
+---------------------------------------------------------
+
+equals() -> A.equals(B) -> A==B (deep compare)
+--------------------------------------------------
+
+Collection to Array
+----------------------
+T[] toArray();
+
+Note: some of the Collection interface methods are not supported in Child class and throws java.lang.UnsupportedOperationException that is the child of RuntimeException.
+
+Java Collection framewroks support two types of containers
+    1. Storing collection of elements simply called collection
+    2. Storing data into key/value pair are called Maps.
+
+Container(Collection) | Duplication Allowed? | Sequence? | Data Structure
+---------------------------------------------------------------------------
+Set                     No                      Random          Hash tables
+List                    Yes                     Insertion Order DLL
+Stack                   Yes                     LIFO            Array/LL
+Queue                   Yes                     FIFO            Array/LL
+Priority Queue          Yes                     Priority wise   Heap Tree
+
+
+List(I) Interface
+---------------------
+1. List extends Collection interface
+2. List is the collection of objects access in insertion order and allows the duplicate elements.
+3. Ordered -> Yes (Insertion Order)
+4. Duplicate Allowed -> Yes
+5. List(I) Implementations
+    - ArrayList(C)
+    - LinkiedList(C)
+6. List allows you to access the elements from index.
+7. Data structure -> Doubly Linked list (Bi Directional)
+
+List(I) Methods
+-----------------
+    E get(int index)
+    set(int index, E)
+    add(int index, E)
+    addAll(int index, Collection)
+    remove(int index)
+    int indexOf(E)
+    int lastIndexOf(E)
+
+    List subList(int startIndex, int endIndex)
+
+ArrayList(C)
+--------------
+1. ArrayList is the implementation of List interface
+2. ArrayList -> Data Structure -> Growable Array
+3. Ordered ? -> Yes -> Insertion Order
+4. Index Accessiable -> Yes
+5. Default Size of array -> Default Capacity -> 16
+
+Creating ArrayList constructors and Method
+------------------------------
+ArrayList()
+ArrayList(int intialCapacity)
+ArrayList(Collection)
+
+Method
+-------------
+trimToSize() ->  Shorten the array list
+
+
+Iterators: Iterators are the classes used to iterate the containers.
+----------------
+    Iterator: Uni-Directional
+    ListIterator: Bi- Directional (Only linked list)
+
+Itrator Methods
+------------------
+    boolean hasNext()
+    E next()
+    remove() -> Remove the current element. If we remove an element more than once it throws an exception IllegleStateException
+
+ListIterator -> Sub interface of Iterator interface.
+-------------
+    boolean hasNext()
+    boolean hasPrevious()
+    E next()
+    E previous();
+    remove();
+
+Enumeration(I)
+--------------
+    boolean hasNextElement()
+    E nextElement()
+
+LinkedList(C)
+-------------------
+1. LinkedList is the implementaion of List Interface
+2. LinkedList -> Data Structure -> Doubly LinkedList
+3. Ordered ? -> Yes -> Insertion Order
+4. Index Accessiable -> Yes
+
+
+Constructors
+------------------
+1. LinkedList()
+2. LinkedList(Collection)
+
+Methods
+-----------
+1. void addFirst(E element)
+2. void addLast(E element);
+3. E removeFirst()
+4. E removeLast()
+5. E getFirst()
+6. E getLast()
+
+Note:
+    List<String>colors =  Arrays.asList("red", "green", "blue")
+---------------------------------------------------------------
+
+Vector and Stack class (Legacy Classes)
+------------------------------------------
+1. Vector is a subclass of AbstractList
+2. Stack is a subclass of Vector
+3. Redesined in Java-2 but support the older functionality for compatablity.
+
+
+Vector V/S ArrayList
+-----------------------
+1. Vector and ArrayList are Same, except that Vector methods are synchronized (thread safe).
+2. Vector class is a Legacy class which is created before the collection framework and Redesined in collection framework.
+3. In Java-2, Vector is redesigned in such a way that it follows the consistant nature of other classes and implement the common interfaces.
+
+Vector Constructor & Methods
+------------------------------
+Vector()
+Vector(Collection)
+Vector(int intialCapacity)
+Vector(int intialCapacity, int capacityIncrement)
+
+
+void addElement(E)
+int capacity()
+Enumeration elements()
+E elementAt(int index)
+E firstElement()
+E lastElement()
+void insertElementAt(int index, Object o)
+boolean removeAllElements()
+boolean removeElement(Object )
+boolean removeElementAt(int index)
+void setElementAt(int index, Object)
+void setSize(int size)
+void trimToSize()
+
+Note: Enumeration is same as Iterator that is induced before Java-2 and suppersed by Iterator in Java-2.
+
+Stack class
+-----------------
+Stack()
+
+boolean empty()
+E peek()
+E pop()
+E push(E)
+int search(E)
+
+Set(I)
+------------
+1. Set is the child of Collection(I)
+2. Set represent unique collection of data. If any duplicate element trying to add using add() method it don't add into the collection and return false.
+3. Set(I) Implementation
+    1. HashSet(C)
+    2. LinkedHashSet(C)
+    3. TreeSet(C)
+
+HashSet(C) class
+---------------------
+Collection(I) -> AbstractSet(A) -> HashSet(C) 
+1. Store a unique collection of data.
+2. Background Data structure -> HashTable(Hashing Technique) -> Growable Array implementation
+3. Use the hashcode for hashing technique
+4. HashSet is an underorderd collection.
+5. Two elements are considered duplicate if e1.equals(e2) and e1.hashCode() == e2.hashCode()
+
+Constructors
+----------------
+HashSet()
+HashSet(int intialCapacity)
+HashSet(Collection c)
+HashSet(int intialCapacity, float loadFactor) // default 16,0.75
+
+LinkedHashSet(C)
+--------------------
+Collection(I) -> AbstractSet(AC) -> HashSet(C) -> LinkedHashSet(C)
+
+1. Child class of HashSet(C) class
+2. Don't allow duplicate elements
+3. Order -> Insertion Order
+4. Data Strurcture -> LinkedList used with hashing technique
+5. For hashing purpose, object hashcode() is used.
+
+LinkedHashSet()
+LinkedHashSet(Collection C)
+LinkedHashSet(int initialCapacity)
+LinkedHashSet(int intialCapacity, float loadFactor)
+
+
+
+SortedSet(I)
+-------------------
+Collection(I) -> Set(I) -> SortedSet(I)
+---------------------------
+E first()
+E last()
+SortedSet<E> headSet(E)
+SortedSet<E> tailSet(E)
+
+NavigableSet(I)
+--------------------
+Collection(I) -> Set(I) -> SortedSet(I) -> NavigableSet(I)
+
+E pollFirst()
+E pollLast()
+E lower(E e)
+E higher(E e)
+E floor(E)
+E ceiling(E)
+
+TreeSet
+-------------
+Collection(I)->Set(I)->SortedSet(I)->NavigableSet(I)->TreeSet(C)
+1. TreeSet extends AbstractSet
+
+TreeSet()
+TreeSet(Collection c)
+TreeSet(Comparactor)
+TreeSet(SortedSet<E>)
