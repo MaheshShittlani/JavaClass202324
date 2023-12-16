@@ -1,0 +1,56 @@
+Collection Framework (java.util.*)
+-------------------------------------
+
+What is the Collection?
+-----------------------
+Collection Framework is java API which is used to handle group of objects. It have multiple classes and interfaces to deal with group of objects.
+    - Implement various Data structures
+        - Dynamic Array
+        - Linked List
+        - Stack 
+        - Queue
+        - Tree
+    - Data type independent (Using Generics)
+    - Base on the interfaces (Similary functionality)
+    - Bulk data operations (Utility Classes)
+
+Collection Framework
+---------------------------
+Itrable(I)
+    -Collection(I)
+        - Set(I)
+            - HashSet(C)
+            - LinkedHashSet(C)
+            - SortedSet(I)
+                - TreeSet(C)
+        - List(I)
+            - ArrayList(C)
+            - Vector(C)
+            - LinkedList(C)
+        - Queue(I)
+            - PriorityQueue(C)
+
+    Map(I)
+        - HashTable(C)
+        - HashMap(C)
+        - LinkedHashMap(C)
+        - SortMap(I)
+            - TreeMap(C)
+
+-------------------------------------------------
+The collection framework is introduction in JAVA-1.2(java-2) before that to handle group of objects there are some ad-hoc classes are used.
+    Vector(C)
+        -addItem(item);
+        -remove()
+    HashTable(C)
+        -add(item)
+        -delete()
+
+In the Collection framework these classes are improved and still exists but these class contains all the old methods.
+These classes are known as legacy classes.
+All the methods of legacy classes are thread safe(synchronized).
+
+
+Collection Interface
+-----------------------
+
