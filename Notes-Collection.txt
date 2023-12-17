@@ -311,3 +311,115 @@ TreeSet()
 TreeSet(Collection c)
 TreeSet(Comparactor)
 TreeSet(SortedSet<E>)
+
+java.lang.Comparable (I)
+---------------
+    int compareTo(T) -> This method is responsible to compare two objects.
+
+A class which comparable interface garuntees that it has a way to compare two object.
+
+All the wrapper classes and String classes and many predefined implements Comparable.
+
+This is called `Partial order comparasion` as it defines the default way of comparision for a class.
+
+Comparator(I)
+--------------------
+    int compare(T1,T1) -> Compare two objects.
+
+We can use the object of Comparator in a TreeSet to implement the custom sorting/Comparision behavior. 
+It define the `Total order comparasion`
+
+Queue(I)
+    - It is the collection of object which follows FIFO order
+    - Background data structure (Growable/ Linked list)
+    - Default Queue implementation(Linked List)
+    - PriorityQueue (Heap Tree)
+
+Map
+---------
+It store the data in key-value pair where key must be uniuqe.
+
+Map(I) -> SortedMap(I)   -> NavigableMap(I)
+Map(I) -> AbstractMap(AC)
+
+Map methods
+---------
+    clear()
+    containsKey(E)
+    containsValue(E)
+    Set<Map.Entry<K,V>> entrySet()
+    V get(K key)
+    boolean isEmpty()
+    Set<K> keySet()
+    V put(K key, V value)
+    void putAll(Map<? extend K, ? extends V> m)
+    V remove(K key)
+    int size()
+    Collection<V> values()
+    void forEach(Consumer<? super K,? super V> action)
+
+Query Methods
+-----------------
+boolean containsKey()
+boolean containsValue()
+
+Map.Entry(I)
+    K getKey()
+    V getValue()
+    void setValue(V v)
+
+HashMap
+--------------
+    Map(I) -> AbstractMap(AC) -> HashMap(C)
+
+HashMap()
+HashMap(int intialCapacity, float loadFactor) // 16, 0.75
+HashMap(Map<? extends K, ? extends V> m)
+
+1. Order -> Unordered
+2. Duplicate Key -> Not allowed
+3. Duplication value -> Allowed
+4. How to identify a key is duplicate or not -> 
+    1. obj1.key == obj2.key
+    2. obj1.key.hashCode().equals(obj2.key.hashCode());
+5. Background Data Structure -> HashTable using growable array and implements like HashSet
+6. Need to override hashCode() and equals() method for user defined object.
+
+LinkedHashMap
+-----------------
+    Map(I) -> AbstractMap(AC) -> HashMap(C) -> LinkedHashMap(C)
+
+LinkedHashMap()
+LinkedHashMap(Map<? extends K, ? extends V> m)
+LinkeHashMap(int intialCapacity, float loadFactor, boolean accessOrder)
+
+1. Ordered -> Yes (Insertion Order by Key)
+2. Duplicate key Allowed -> No.
+3. Background Datastructure -> LinkedList
+
+
+SortedMap
+-------------------
+Map(I) -> SortedMap(I)
+
+K firstKey()
+V firstValue()
+Comparator<? super K> comparactor() 
+SortedMap<K,V> headMap(K toKey)
+SortedMap<K,V> tailMap(K toKey)
+
+1. Efficient in insertion, deletion and searching
+2. Not Ordered
+
+TreeMap(C)
+-------------------
+Map(I) -> SortedMap(I) -> NavigableMap(I) -> TreeMap(C)
+
+1. TreeMap()
+2. TreeMap(Map<? extends K, ? extends V> m)
+3. TreeMap(Comparator <? super K> c)
+
+-------------------------------------------
+collection -> Collection framewroks
+Collection(I) -> Collection Interface
+Collections(C) -> Collection Utiltity class

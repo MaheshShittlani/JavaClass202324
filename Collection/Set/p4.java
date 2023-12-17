@@ -1,5 +1,5 @@
 import java.util.TreeSet;
-class Student implements Comparable<Student>{
+class Student implements Comparable<Student> {
 	private int roll;
 	private String name;
 
@@ -17,13 +17,13 @@ class Student implements Comparable<Student>{
 	}
 
 	@Override
-	public int compareTo(Student o) {
-		return this.roll - o.roll;
+	public int compareTo(Student s) {
+		return name.compareTo(s.name);
 	}
 
 	@Override
 	public String toString() {
-		return roll + " - " + name;
+		return "{" + roll + " - " + name + "}";
 	}
 }
 
@@ -37,8 +37,5 @@ class TestStudent {
 		ts.add(new Student(109, "Tony"));
 
 		System.out.println(ts);
-
-		TreeSet<Student> ts1 = new TreeSet<>(ts);
-		System.out.println(ts1);
 	}
 }
